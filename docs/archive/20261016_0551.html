@@ -1,0 +1,902 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>arXiv 论文速递</title><style>
+:root {
+  --bg:#f8fafc; --card:#ffffff; --text:#0f172a; --muted:#667085; --border:#e5e7eb; --acc:#2563eb;
+}
+:root[data-theme="dark"] {
+  --bg:#0b0f17; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --border:#1f2937; --acc:#2563eb;
+}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.6;}
+.container{max-width:900px;margin:0 auto;padding:18px;}
+.header{display:flex;gap:10px;justify-content:space-between;align-items:center;margin:8px 0 16px;flex-wrap:wrap}
+h1{font-size:22px;margin:0}
+.badge{font-size:12px;color:#111827;background:var(--acc);padding:2px 8px;border-radius:999px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px 18px;margin:14px 0;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.title{font-weight:700;margin:0 0 6px 0;font-size:18px}
+.meta-line{color:var(--muted);font-size:13px;margin:2px 0}
+.links a{color:var(--acc);text-decoration:none;margin-right:12px}
+.detail{margin-top:10px;background:rgba(2,6,23,.03);border:1px solid var(--border);border-radius:10px;padding:8px 10px}
+summary{cursor:pointer;color:var(--acc)}
+.mono{white-space:pre-wrap;background:rgba(2,6,23,.03);border:1px solid var(--border);padding:10px;border-radius:10px}
+.row{display:grid;grid-template-columns:1fr;gap:12px}
+@media (min-width: 860px) {
+  .row-2{grid-template-columns:1fr 1fr}
+}
+.footer{color:var(--muted);font-size:13px;margin:20px 0 10px}
+.hr{height:1px;background:var(--border);margin:14px 0}
+.history-list a{display:block;color:var(--acc);text-decoration:none;margin:4px 0}
+.controls{display:flex;gap:8px;align-items:center}
+.btn{border:1px solid var(--border);background:var(--card);padding:6px 10px;border-radius:10px;cursor:pointer;color:var(--text)}
+.btn:hover{border-color:var(--acc)}
+</style>
+<script>
+(function() {
+  const root = document.documentElement;
+  function apply(t) {
+    if (t==='dark') root.setAttribute('data-theme','dark');
+    else if (t==='light') root.removeAttribute('data-theme');
+    else {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        root.setAttribute('data-theme','dark');
+      else root.removeAttribute('data-theme');
+    }
+  }
+  let t = localStorage.getItem('theme') || 'light';
+  if (!['light','dark','auto'].includes(t)) t='light';
+  apply(t);
+  window.__toggleTheme = function() {
+    let cur = localStorage.getItem('theme') || 'light';
+    if (cur==='light') cur='dark';
+    else if (cur==='dark') cur='auto';
+    else cur='light';
+    localStorage.setItem('theme', cur);
+    apply(cur);
+    const el=document.getElementById('theme-label');
+    if(el) el.textContent = cur.toUpperCase();
+  }
+  window.__expandAll = function(open) {
+    document.querySelectorAll('details').forEach(d => d.open = !!open);
+  }
+})();
+</script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>arXiv 论文速递</h1>
+      <div style="display:flex;gap:10px;align-items:center">
+        
+<div class="controls">
+  <button class="btn" onclick="__toggleTheme()">Theme: <span id="theme-label" style="margin-left:6px">AUTO</span></button>
+  <button class="btn" onclick="__expandAll(true)">Expand All</button>
+  <button class="btn" onclick="__expandAll(false)">Collapse All</button>
+</div>
+
+        <span class="badge">2026-10-16 05:51</span>
+      </div>
+    </div>
+    <div class="hr"></div>
+    <div>Snapshot: 20261016_0551</div>
+    <div class="row"><div class="card">
+<div class="title">The $\mathrm{U}$-Derivative Associated with Linear Recurrence Sequences</div>
+<div class="meta-line">Authors: Ronald Orozco López</div>
+<div class="meta-line">First: 2026-10-14T17:59:06+00:00 · Latest: 2026-10-14T17:59:06+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.20593v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.20593v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We associate a canonical operator to every linear recurrence sequence admitting a distinct-root Binet representation \(\mathrm{U}_n=\sum_{j=1}^{k}A_jλ_j^n.\) The construction is based on the spectral Binet operator \(\mathcal{B}_\mathrm{U}=\sum_{j=1}^{k}A_jT_{λ_j}, \) where \(T_{λ_j}f(x)=f(λ_jx)\) is the dilation operator associated with the characteristic root \(λ_j\). The corresponding recurrence derivative is defined by \(\mathrm{D}_\mathrm{U}=x^{-1}\mathcal{B}_\mathrm{U}.\) Its fundamental property is the monomial identity \(\mathrm{D}_\mathrm{U}(x^n)=\mathrm{U}_nx^{n-1},\) which establishes a direct correspondence between recurrence sequences and degree-lowering operators. We develop the operator theory of \(\mathrm{D}_\mathrm{U}\), including iteration, a spectral product rule, the associated Leibniz defect, and a quotient rule. The construction reveals a natural bifurcation determined by the value \(\mathrm{U}_0\), producing the Ward and non-Ward regimes as intrinsic operatorial phenomena. The product structure is shown to be governed by \(k-2\) residual spectral channels, leading to notions of spectral cancellation and spectral balance. As an application, we obtain a complete qualitative classification of second-order recurrence calculi. Using Horadam sequences as a universal second-order model, we prove that every such calculus is determined by the invariant triple \((\mathrm{W}_0,Δ, Z_\mathrm{W}),\) where \(\mathrm{W}_0\) identifies the Ward/non-Ward type, \(Δ\) determines the spectral geometry, and \(Z_\mathrm{W}\) determines regularity or singularity.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We associate a canonical operator to every linear recurrence sequence admitting a distinct-root Binet representation \(\mathrm{U}_n=\sum_{j=1}^{k}A_jλ_j^n.\) The construction is based on the spectral Binet operator \(\mathcal{B}_\mathrm{U}=\sum_{j=1}^{k}A_jT_{λ_j}, \) where \(T_{λ_j}f(x)=f(λ_jx)\) is the dilation operator associated with the characteristic root \(λ_j\).</div>
+</details>
+</div>
+<div class="card">
+<div class="title">The $L^1$-realization of an elliptic operator with unbounded coefficients</div>
+<div class="meta-line">Authors: Sallah Eddine Boutiah</div>
+<div class="meta-line">First: 2026-10-05T16:35:34+00:00 · Latest: 2026-10-14T17:58:01+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.06659v2">Abs</a> · <a href="https://arxiv.org/pdf/2610.06659v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We establish an $L^1$-theory for a class of elliptic operators with unbounded coefficients, extending our earlier semigroup generation results and those of Canale--Rhandi--Tacelli to the endpoint $p=1$. The $L^1$-realization generates a positive analytic $C_0$-semigroup that is compact for every positive time. We characterize the generator domain through weighted estimates and prove consistency with the corresponding $L^p$-semigroups for $1&lt;p&lt;\infty$.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We establish an $L^1$-theory for a class of elliptic operators with unbounded coefficients, extending our earlier semigroup generation results and those of Canale--Rhandi--Tacelli to the endpoint $p=1$.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">All Serrin bands are unduloidal</div>
+<div class="meta-line">Authors: Laurent Hauswirth, Pablo Mira</div>
+<div class="meta-line">First: 2026-10-14T17:56:58+00:00 · Latest: 2026-10-14T17:56:58+00:00</div>
+<div class="meta-line">Comments: 33 pages, 2 figures</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.20581v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.20581v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We show that any Serrin domain in $\mathbb{R}^2$ with two boundary components is a member of the canonical unduloidal family</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We show that any Serrin domain in $\mathbb{R}^2$ with two boundary components is a member of the canonical unduloidal family</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Complex generalized spin-c Killing spinors in low dimensions</div>
+<div class="meta-line">Authors: José Luis Carmona Jiménez, Alejandro Gil-García, C. S. Shahbazi</div>
+<div class="meta-line">First: 2026-10-14T17:52:44+00:00 · Latest: 2026-10-14T17:52:44+00:00</div>
+<div class="meta-line">Comments: 30 pages. Comments are welcome!</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.20568v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.20568v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We classify all complex generalized spin-c Killing spinors with complex Killing function $iμ-α$ on complete Riemannian surfaces, presenting an explicit list of all possible cases. We show that, contrary to previous statements in the literature, there exist complex generalized spin-c Killing spinors on Riemannian surfaces for which $αμ\not\equiv0$. We illustrate the classification by providing several explicit local, compact, and complete examples, including a complete example for which $αμ&gt;0$ everywhere. We then move to three dimensions, proving that a spin-c Riemannian three-manifold admits a complex generalized spin-c Killing spinor with complex Killing function $iμ-α$ if and only if it is a $μ$-exact trans-Sasakian manifold of type $(α,μ)$. In addition, we construct a geodesically incomplete Riemannian three-manifold equipped with a complex generalized spin-c Killing spinor for which neither $μ$ nor $α$ vanishes identically, and then prove that this is not possible if the characteristic vector field of the associated trans-Sasakian structure is complete. These results settle a conjecture by Große and Nakad (Results in Mathematics, 2015) stating that on two- and three-dimensional Riemannian manifolds the complex Killing function of any complex generalized spin-c Killing spinor must be either globally real or globally imaginary.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We classify all complex generalized spin-c Killing spinors with complex Killing function $iμ-α$ on complete Riemannian surfaces, presenting an explicit list of all possible cases.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">On the atomic decomposition of complete intersection in flag varieties</div>
+<div class="meta-line">Authors: Boris Alexeev, Leonardo F. Cavenaghi, Giovane Galindo, Bogdan Georgiev, Ludmil Katzarkov, Pedro Antonio Muniz Martins</div>
+<div class="meta-line">First: 2026-09-18T15:37:09+00:00 · Latest: 2026-10-14T17:51:17+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2609.21914v2">Abs</a> · <a href="https://arxiv.org/pdf/2609.21914v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We develop a root-theoretic localization formalism for genus-zero Gromov--Witten invariants of flag varieties and of smooth zero loci of globally generated homogeneous vector bundles. The resulting invariants are expressed as finite sums over decorated trees whose contributions are determined by the root system of the ambient flag variety and by the torus weights of the defining bundle. We connect these computations with the Theory of Hodge Atoms of Katzarkov--Kontsevich--Pantev--Yu via the matrix of small quantum multiplication by first Chern class.
+  Let $X$ be a Fano fourfold with $h^{3,1}(X)=1$ arising as a hyperplane section of a suitable Fano fivefold. Its cohomology decomposes into a monodromy-fixed part and the middle vanishing cohomology. This decomposition is preserved by quantum multiplication by the first Chern class. Moreover, it acts by a scalar on the vanishing summand. We show, for the monodromy-fixed block, that (a) if every eigenvalue has algebraic multiplicity at most two and $X$ is Hodge general, then $X$ is irrational; (b) if every eigenvalue has Jordan defect at most one and $X$ is rational, then every weak factorization contains a smooth surface center whose minimal model is a projective K3 surface. Many applications are presented.
+  Using the recently introduced quantum connection approach to irrationality, we obtain from the computations here presented the irrationality of the very general smooth complete intersection of a hyperplane and a quadric in $\operatorname{LG}(3,6)$; the very general smooth quadric section in $G_2/P_2$; and the very general smooth complete intersection of five hyperplanes and a quadric in the spinor 10-fold.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We develop a root-theoretic localization formalism for genus-zero Gromov--Witten invariants of flag varieties and of smooth zero loci of globally generated homogeneous vector bundles.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Estimates for $L^p$ variants of Gowers norms</div>
+<div class="meta-line">Authors: Vjekoslav Kovač, Keith M. Rogers</div>
+<div class="meta-line">First: 2026-09-08T15:45:23+00:00 · Latest: 2026-10-14T17:49:36+00:00</div>
+<div class="meta-line">Comments: v2: 42 pages, 4 figures, additional references, shortened proofs of relatively standard lemmas, expanded acknowledgements</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2609.08916v2">Abs</a> · <a href="https://arxiv.org/pdf/2609.08916v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Motivated by a log-convexity question of Bennett and Tao, we consider Gowers-type functionals defined by $L^p$ norms of multiple autocorrelations. We prove sharp bounds in terms of $L^q$ norms and characterise the near-extremisers on Euclidean spaces as well as locally compact abelian groups. We also establish two families of degree-lowering inequalities and study their near-extremisers. As a byproduct of this broader theory, we show that the constant in the log-convexity estimate for Gowers norms is strictly less than unity, confirming the aforementioned conjecture of Bennett and Tao. Finally, we characterise the $p$ for which the Gowers-type functionals necessarily satisfy the triangle inequality on nonnegative measurable functions.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Motivated by a log-convexity question of Bennett and Tao, we consider Gowers-type functionals defined by $L^p$ norms of multiple autocorrelations.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Proof of the Penrose Conjecture for Maximally Parameterized Initial Data Sets</div>
+<div class="meta-line">Authors: Hubert Bray, Tuan Dolmen, Marcus Khuri, David Schmidt</div>
+<div class="meta-line">First: 2026-10-14T17:46:46+00:00 · Latest: 2026-10-14T17:46:46+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.20559v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.20559v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We prove the spacetime Penrose inequality for asymptotically flat initial data sets $(M^n,g,k)$ in all dimensions $n\geq 3$, under the dominant energy condition, for data admitting the &#x27;maximally parameterized form&#x27; defined in equation (4.7). In this case, the second fundamental form $k$ is locally parameterized by $n(n+1)/2$ functions, giving the same formal local functional degrees of freedom as an arbitrary symmetric $2$-tensor.
+  The proof is based on a new 1-parameter family of generalized Schoen-Yau identities and their gauge-invariant specialization, inspired by the generalized Jang framework of Bray-Khuri [8, 9]. For maximally parameterized data, these identities produce a Riemannian comparison metric \[
+  \bar g=g+β\otimesβ\] with nonnegative scalar curvature $R_{\bar{g}} \geq 0$. Under a natural nondegeneracy condition (5.7) at the apparent horizon, the comparison metric admits a smooth minimal completion up to $\partial M^n$. Together with suitable asymptotic control, this reduces the Penrose inequality to its Riemannian counterpart. The all-dimensional conclusion uses the Riemannian Penrose theorem of Bi-Zhu [6], together with a minimizing enclosure argument that allows singular boundaries.
+  More generally, in the spirit of [8, 9], we note that the Penrose conjecture follows whenever a certain system of PDEs (3.18) involving $k$ can be solved, in which case our new identity (3.15) immediately implies $R_{\bar{g}} \geq 0$. A natural problem is thus to regularize our degenerate system to prove a general existence theory, thereby proving the Penrose conjecture. Essentially, we believe this is what the OpenAI paper [27] posted last week on October 6, 2026 claims to have done.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We prove the spacetime Penrose inequality for asymptotically flat initial data sets $(M^n,g,k)$ in all dimensions $n\geq 3$, under the dominant energy condition, for data admitting the &#x27;maximally parameterized form&#x27; defined in equation (4.7).</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Inverse limits of locally convex Lie groupoids</div>
+<div class="meta-line">Authors: Ahmed Gamal Shaltut</div>
+<div class="meta-line">First: 2026-10-08T16:48:01+00:00 · Latest: 2026-10-14T17:36:53+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.12296v2">Abs</a> · <a href="https://arxiv.org/pdf/2610.12296v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We study strict inverse systems of locally convex Lie groupoids and Lie algebroids. We show that strict inverse limits of Lie algebroids and Lie groupoids inherit natural Lie structures and establish a natural isomorphism of functors $\varprojlim\circ\operatorname{Lie}\cong\operatorname{Lie}\circ\varprojlim$. We then consider inverse systems of integrable Banach-Lie algebroids and their source-simply connected levelwise integrations. We give conditions under which these integrations form a strict inverse system of Lie groupoids and hence their inverse limit integrates the inverse-limit algebroid. Under additional hypotheses on the source-fiber inverse sequence, we describe the obstruction to source-simply connectedness of the resulting integration in terms of the derived inverse limit $\varprojlim^{1}π_2$ of the second homotopy groups of the source fibers. We illustrate the theory with several examples: inverse limits of jet groupoids, current groupoids, and gauge groupoids, including the corresponding inverse-limit Atiyah algebroids and a source-simply connected inverse-limit integration arising from the quaternionic Hopf bundle.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We study strict inverse systems of locally convex Lie groupoids and Lie algebroids.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">The quasi-convex Rockafellar theorem</div>
+<div class="meta-line">Authors: Luigi De Pascale, Paul Pegon</div>
+<div class="meta-line">First: 2026-10-14T17:36:17+00:00 · Latest: 2026-10-14T17:36:17+00:00</div>
+<div class="meta-line">Comments: 32 pages</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.20542v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.20542v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Rockafellar showed that every cyclically monotone operator is contained in the subdifferential of a convex function, and characterized the maximal ones. We establish the quasi-convex analogue of this theorem, with no assumption on the operator: in any separable Banach space, a setting we show to be sharp, every cyclically quasi-monotone operator is contained in the normal cone operator of a quasi-convex function. In finite dimension, we characterize maximal cyclically quasi-monotone operators and show that they are maximal quasi-monotone. Unlike in the convex case, the potential is not unique, and we build it from a preference relation obtained through successive preorders. As applications, we extend Afriat&#x27;s theorem on revealed preferences in economics to infinite data sets, and obtain Kantorovich-type potentials for a supremal optimal transport problem.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Rockafellar showed that every cyclically monotone operator is contained in the subdifferential of a convex function, and characterized the maximal ones.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Flexibility of eigenvalues for graph Laplacians arising from genus 3 surfaces</div>
+<div class="meta-line">Authors: Alena Erchenko, Dmitry Jakobson, Allison Tsypin</div>
+<div class="meta-line">First: 2026-04-29T05:22:09+00:00 · Latest: 2026-10-14T17:17:54+00:00</div>
+<div class="meta-line">Comments: v2: minor edits and improvements following referee report</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2604.26308v2">Abs</a> · <a href="https://arxiv.org/pdf/2604.26308v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">It is known that the small eigenvalues of the Laplacian of a Riemann surface close to the boundary of the modular space can be well approximated by the eigenvalues of the discrete Laplacian on a certain graph coming from the pair of pants decomposition of the surface. In this paper, we provide a complete description of the sets of eigenvalues of the weighted graph Laplacian for all graphs on four vertices that correspond to a valid pair of pants decomposition of a surface of genus 3.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">It is known that the small eigenvalues of the Laplacian of a Riemann surface close to the boundary of the modular space can be well approximated by the eigenvalues of the discrete Laplacian on a certain graph coming from the pair of pants decomposition of the surface.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">On Meeks&#x27; conjecture on disjoint minimal graphs</div>
+<div class="meta-line">Authors: Angelo Benedetti, Barbara Nelli</div>
+<div class="meta-line">First: 2026-10-14T17:12:50+00:00 · Latest: 2026-10-14T17:12:50+00:00</div>
+<div class="meta-line">Comments: 15 pages, 3 figures</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.20508v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.20508v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We study disjoint solution pairs $(u,D)$ to the minimal surface equation in $\mathbb{R}^n$, with $u=0$ on $\partial D.$ A conjecture of W. Meeks states that at most two such pairs can exist in $\mathbb{R}^n.$ We confirm the conjecture in two complementary cases. For $n\in\{2,3,4,5,6\},$ we prove it under a superlinearity assumption. In dimension $n=2,$ we establish the result under a suitable sublinearity assumption. We also derive estimates on the asymptotic angle of domains supporting nontrivial solutions for $n\geq 3.$</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We study disjoint solution pairs $(u,D)$ to the minimal surface equation in $\mathbb{R}^n$, with $u=0$ on $\partial D.$ A conjecture of W.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Topology of tame contractible $n$-manifolds, $n=6,7$, with Positive BiRicci Curvature and Ricci lower bounds</div>
+<div class="meta-line">Authors: Paul Sweeney</div>
+<div class="meta-line">First: 2026-10-06T17:05:12+00:00 · Latest: 2026-10-14T17:12:35+00:00</div>
+<div class="meta-line">Comments: 18 pages, 1 figure. Statement of Theorem A has been corrected. Introduction has been expanded and improved. References were added</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.08686v2">Abs</a> · <a href="https://arxiv.org/pdf/2610.08686v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We show that if an open smooth $6$-manifold $M^6$ is the interior of a compact, contractible manifold with boundary $X^6$, such that $π_3(X,\partial X)=0$, and $M$ supports a complete metric with uniform positive BiRicci curvature and Ricci curvature bounded below, then $M$ is diffeomorphic to $\mathbb{R}^6$. Additionally, we show that if an open smooth $n$-manifold $M^n$, $n\in\{6,7\}$, is the interior of a compact, contractible manifold with boundary $X^n$, such that $π_3(X,\partial X)=0$, and $M$ supports a complete metric with positive BiRicci curvature with at most $C$-quadratic decay at infinity for some $C&gt;C_n$ and nonnegative Ricci curvature, then $M$ is diffeomorphic to $\mathbb{R}^n$. Lastly, for each $n\geq6$, we construct a compact, contractible Newman $n$-manifold, $N^n$, based on a presentation of the Higman group such that $π_i(N,\partial N)=0$, $3\leq i \leq n-3$, and $\mathrm{int}(N)$ admits a complete metric with uniform positive scalar curvature and Ricci curvature bounded below.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We show that if an open smooth $6$-manifold $M^6$ is the interior of a compact, contractible manifold with boundary $X^6$, such that $π_3(X,\partial X)=0$, and $M$ supports a complete metric with uniform positive BiRicci curvature and Ricci curvature bounded below, then $M$ is diffeomorphic to $\mathbb{R}^6$.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">$\mathbb{Z}_k$-smooth approximation of mod $k$ integral cycles</div>
+<div class="meta-line">Authors: Gianmarco Caldini, Anna Skorobogatova</div>
+<div class="meta-line">First: 2026-10-14T17:08:02+00:00 · Latest: 2026-10-14T17:08:02+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.20499v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.20499v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We prove that every mod $k$ integral cycle $T$ of sufficiently high codimension in an oriented Riemannian manifold $\mathcal{M}$ can be approximated in flat norm by a cycle which is a $\mathbb{Z}_k$-smooth submanifold $Σ$ of nearly the same area, up to a singular set of codimension 5. If in addition $T$ belongs to a mod $k$ homology class admitting an embedded $\mathbb{Z}_k$-smooth manifold representative, then $Σ$ can be taken fully regular, up to the codimension one stratum of classical singularities. This extends the smooth approximation theory to cycles with coefficients in $\mathbb{Z}/k\mathbb{Z}$ in stable regimes. Moreover, we provide examples showing the impossibility of locally approximating minimizing cycles by smooth or $\mathbb{Z}_k$-smooth submanifolds, even in homology classes with smooth or $\mathbb{Z}_k$-smooth representatives.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We prove that every mod $k$ integral cycle $T$ of sufficiently high codimension in an oriented Riemannian manifold $\mathcal{M}$ can be approximated in flat norm by a cycle which is a $\mathbb{Z}_k$-smooth submanifold $Σ$ of nearly the same area, up to a singular set of codimension 5.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Cheng&#x27;s Theorem in the Spectral Setting</div>
+<div class="meta-line">Authors: Carolina Ruviaro</div>
+<div class="meta-line">First: 2026-10-14T16:56:02+00:00 · Latest: 2026-10-14T16:56:02+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.20485v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.20485v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We prove a maximal diameter rigidity theorem for closed 3-dimensional Riemannian manifolds under a spectral lower bound for the Ricci curvature. We show that if $0&lt;γ&lt;2$, $K&gt;0$ and $λ_1(-γΔ+\operatorname{Ric})\geq 2K$, then the optimal bound $\operatorname{diam}(M,g)\leq\fracπ{\sqrt{K}}$ is attained if and only if (M,g) is isometric to the round 3-sphere of constant sectional curvature $K$.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We prove a maximal diameter rigidity theorem for closed 3-dimensional Riemannian manifolds under a spectral lower bound for the Ricci curvature.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">An extension principle for Einstein-Maxwell-charged scalar field system with finite Doppler exponent</div>
+<div class="meta-line">Authors: Xinliang An, Haoyang Chen, Taoran He</div>
+<div class="meta-line">First: 2026-10-14T16:48:40+00:00 · Latest: 2026-10-14T16:48:40+00:00</div>
+<div class="meta-line">Comments: 51 pages</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.20469v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.20469v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We prove a new extension principle for the spherically symmetric Einstein--Maxwell--charged scalar field system. Rather than imposing conditions for mass ratio $2m/r$ as in Christodoulou&#x27;s small-mass-ratio criterion or as in An--Chen--Singh&#x27;s proof [1] with $2m/r&lt;3/8$, here we work through a proposal by An-Tan [2] with finite Doppler exponent (blueshift). By conducting two successive blow-up analyses, followed by a stationary comparison and a rigidity argument, we establish the uniform boundness of $α&#x27;$ with $α&#x27;=\partial_vα/\partial_vr$ and $α=\partial_v(rφ)/\partial_vr$. This provides the desired extension principle in An-Tan [2] and completes the picture of weak cosmic censorship developed therein.
+  As we were about to release our preprint, Cicortas communicated to us that together with his collaborators, they concomitantly used a different approach to obtain the corresponding extension principle with finite blueshift (Doppler exponent) for the uncharged Einstein-scalar field system. Hence, we decided to put the current paper as an appendix to An-Tan [2], thereby completing the proof of the weak cosmic censorship for the Einstein-Maxwell-charged scalar field system. At the same time, we are working with Cicortas and his collaborators to write a new preprint containing both approaches for the Einstein-scalar field system.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We prove a new extension principle for the spherically symmetric Einstein--Maxwell--charged scalar field system.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">A Scale-Critical $μ&lt;\frac38$ Extension Principle for Spherically Symmetric Einstein-Scalar Field System</div>
+<div class="meta-line">Authors: Xinliang An, Haoyang Chen, Jaydeep Singh</div>
+<div class="meta-line">First: 2026-10-14T16:48:28+00:00 · Latest: 2026-10-14T16:48:28+00:00</div>
+<div class="meta-line">Comments: 31 pages; obtained in spring 2025</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.20468v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.20468v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We present a new quantitative, scale-critical $C^1$ extension principle for the spherically symmetric Einstein--scalar field system. We derive estimates for solutions in the causal past of a possibly singular endpoint $\mathcal{O}$ of the center. Assume that there is no trapped surface in this region and assume that the Doppler exponent (blue shift) along each incoming null cone is uniformly bounded. We then prove that the solution can extend regularly across $\mathcal{O}$ provided the mass ratio $μ=2m/r$ satisfies $\supμ&lt;\frac38$. This improves the small-mass-ratio condition in Christodoulou&#x27;s extension principle by an explicit threshold of order one. Our proof has three new ingredients. First, we derive several new uniform scale-critical pointwise estimates for the scalar field and its derivatives. Second, we obtain refined estimates in an exterior self-similar domain within the triangular causal past region. Third, we establish a family of higher-order Morawetz-type identities and identify the ranges of $μ$, with which there are coercive spacetime estimates. The unweighted identity yields the threshold $μ\leq\frac14$, while employing extra self-similar weight raises the threshold to $μ&lt;\frac38$ and provides a weighted control, which implies that the solution&#x27;s BV norm along an outgoing null cone is small, so that Christodoulou&#x27;s theory of bounded variation solutions gives the extension.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We present a new quantitative, scale-critical $C^1$ extension principle for the spherically symmetric Einstein--scalar field system.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Allen--Cahn and mean curvature flows from Clifford hypersurfaces to equators</div>
+<div class="meta-line">Authors: Jingwen Chen</div>
+<div class="meta-line">First: 2026-10-14T16:36:25+00:00 · Latest: 2026-10-14T16:36:25+00:00</div>
+<div class="meta-line">Comments: 9 pages, comments are welcome!</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.20453v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.20453v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">In this short note, using OpenAI&#x27;s resolution of the Solomon--Yau conjecture, we extend our joint work with Pedro Gaspar to all dimensions $n\geq2$. We construct eternal Allen--Cahn flows on $S^{n+1}$ connecting approximations of any prescribed least-area Clifford hypersurface and equatorial sphere. We also construct infinitely many eternal integral Brakke flows from least-area Clifford hypersurfaces to equatorial spheres.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">In this short note, using OpenAI&#x27;s resolution of the Solomon--Yau conjecture, we extend our joint work with Pedro Gaspar to all dimensions $n\geq2$.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">K-area bounds for smooth sphere bundles</div>
+<div class="meta-line">Authors: Haoxuan Cheng</div>
+<div class="meta-line">First: 2026-10-14T16:30:58+00:00 · Latest: 2026-10-14T16:30:58+00:00</div>
+<div class="meta-line">Comments: 14 pages</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.20440v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.20440v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Let $E\to B$ be a smooth $S^n$ bundle with oriented Riemannian total space $(E,g)$, where $n\ge2$. We prove K-area$(E,g)\le4πn(n-1)/σ$ whenever every fibre has intrinsic scalar curvature at least $σ&gt;0$, independently of the dimension of $B$. In particular, unit round fibres give K-area$(E,g)\le4π$. For arbitrary metrics on two-sphere fibres, K-area is bounded by the supremum of their areas. We also obtain stronger bounds from fibrewise scalar spectra.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Let $E\to B$ be a smooth $S^n$ bundle with oriented Riemannian total space $(E,g)$, where $n\ge2$.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Entire solutions of higher order Briot-Bouquet equations</div>
+<div class="meta-line">Authors: Alexandre Eremenko, Tuen Wai Ng, Teng Zhang</div>
+<div class="meta-line">First: 2026-10-14T16:28:18+00:00 · Latest: 2026-10-14T16:28:18+00:00</div>
+<div class="meta-line">Comments: 11 pages</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.20438v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.20438v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">For a meromorphic function $f$ in the complex plane, we determine when $f$ and $f^{(k)}$ are algebraically dependent. This happens precisely when $f$ belongs to the class $W$ of elliptic functions and their degenerates, or satisfies a linear differential equation $f^{(k)} + af + b = 0$ with constant coefficients. The case of functions having a pole was settled previously. We complete the proof by treating entire solutions.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">For a meromorphic function $f$ in the complex plane, we determine when $f$ and $f^{(k)}$ are algebraically dependent.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Deformations of Holomorphic $p$-Contact Structures</div>
+<div class="meta-line">Authors: Dan Popovici</div>
+<div class="meta-line">First: 2026-10-14T16:20:59+00:00 · Latest: 2026-10-14T16:20:59+00:00</div>
+<div class="meta-line">Comments: 19 pages</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.20430v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.20430v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We investigate the notion of holomorphic $p$-contact structure, that we introduced recently in the scalar case with H. Kasuya and L. Ugarte and in the line-bundle case with K. Broder, in the context of a holomorphic family of compact complex manifolds equipped with a holomorphic family of holomorphic line bundles. Firstly, we show that the existence of a holomorphic $p$-contact structure is {\bf deformation-open} when a non-jumping assumption is made on the $\bar\partial$-cohomology of bidegree $(p,\,0)$. This ought to become a source of further examples of holomorphic $p$-contact manifolds. Secondly, we obtain a Berndtsson-type {\bf (semi-)positivity} result for the holomorphic vector bundle over the base induced, as a direct image, by the line bundle on the total space that supports the p-contact structures. Thirdly, we introduce a moduli space of relative holomorphic p-contact structures and we show that it is {\bf Hausdorff} and {\bf open} in a certain quotient topological space.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We investigate the notion of holomorphic $p$-contact structure, that we introduced recently in the scalar case with H.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">$\mathfrak{osp}(1|2)$-cohomology on multidifferential operators space</div>
+<div class="meta-line">Authors: Mabrouk Ben Ammar, Amina Jabeur</div>
+<div class="meta-line">First: 2026-10-10T11:32:01+00:00 · Latest: 2026-10-14T16:18:53+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.14820v2">Abs</a> · <a href="https://arxiv.org/pdf/2610.14820v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We compute cohomology spaces of the ortosymplectic Lie superalgebra $\mathfrak{osp}(1|2)$ on the (1,1)-dimensional real superspace with coefficients in the superspace $\frak{D}_{λ,μ}$ of $n$-ary differential operators acting on weighted densities ($λ\in\mathbb{R}^n$ and $μ\in\mathbb{R}$).</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We compute cohomology spaces of the ortosymplectic Lie superalgebra $\mathfrak{osp}(1|2)$ on the (1,1)-dimensional real superspace with coefficients in the superspace $\frak{D}_{λ,μ}$ of $n$-ary differential operators acting on weighted densities ($λ\in\mathbb{R}^n$ and $μ\in\mathbb{R}$).</div>
+</details>
+</div>
+<div class="card">
+<div class="title">The Corona Problem for Slice Holomorphic Functions via the Matrix Corona Problem</div>
+<div class="meta-line">Authors: Fabrizio Colombo, Elodie Pozzi, Irene Sabadini, Brett D. Wick</div>
+<div class="meta-line">First: 2026-08-12T17:01:33+00:00 · Latest: 2026-10-14T16:08:35+00:00</div>
+<div class="meta-line">Comments: v2: 42 pages; reflects comments from referee report</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2608.12258v2">Abs</a> · <a href="https://arxiv.org/pdf/2608.12258v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">In this paper we prove the Corona theorem for slice hyperholomorphic functions in a general way that applies to functions with values in a Clifford algebra $\mathbb R_n$ for any $n\geq 2$. This general proof is based on a matrix version of Corona&#x27;s theorem and then exploiting some symmetries of the matrices that allow to reconstruct the values of the functions. The crucial idea is to tie together the algebra of the functions, the Bezout identities and the Carleson-type conditions. The results we obtain rest on a new way of writing the slice product which improves the standard approach and which holds in general dimension.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">In this paper we prove the Corona theorem for slice hyperholomorphic functions in a general way that applies to functions with values in a Clifford algebra $\mathbb R_n$ for any $n\geq 2$.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">CMC foliations on Euclidean spaces are minimal foliations</div>
+<div class="meta-line">Authors: José Edson Sampaio, Euripedes Carvalho da Silva</div>
+<div class="meta-line">First: 2026-10-14T16:07:37+00:00 · Latest: 2026-10-14T16:07:37+00:00</div>
+<div class="meta-line">Comments: 18 pages</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.20406v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.20406v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">In this article, we provide a complete answer to one of the most classical conjectures in differential geometry (of foliations). More precisely, we present a complete positive answer to the classical conjecture, due to Meeks III, Pérez, and Ros (2008), that states that every foliation on $\mathbb{R}^{n+1}$ by (possibly varying) CMC hypersurfaces is a foliation by minimal hypersurfaces. Moreover, if $n\leq 6$, such a CMC foliation must consist of parallel hyperplanes.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">In this article, we provide a complete answer to one of the most classical conjectures in differential geometry (of foliations).</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Gaussian rigidity and width of measures</div>
+<div class="meta-line">Authors: Alessandro Pigati</div>
+<div class="meta-line">First: 2026-10-14T15:52:17+00:00 · Latest: 2026-10-14T15:52:17+00:00</div>
+<div class="meta-line">Comments: 19 pages; comments are welcome</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.20385v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.20385v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Given $0\le m&lt;n$ and a positive Radon measure $μ$ on $\mathbb R^n$ with at most polynomial growth, assume that it has finite $m$-dimensional \emph{Gaussian discrepancy}, defined as $$\mathcal D(μ):=\limsup_{R\to\infty}\Bigl[R^2\sup_{x\in\mathrm{spt}μ}|G_R^μ(x)-1|\Bigr],$$ where $G_R^μ(x):=(4πR^2)^{-m/2}\int_{\mathbb R^n} e^{-|z-x|^2/(4R^2)}\,dμ(z)$. Provided that $μ$ admits a flat blow-down $\mathcal H^m\llcorner V$ (an assumption that cannot be dropped entirely), we prove that there exists a finite (smallest) $0\leδ&lt;\infty$, called the \emph{width} of $μ$, such that $$\mathrm{spt}μ\subseteq \bar B_δ(V+x_0),\quad δ^2\le C(m,n)\mathcal{D}(μ),$$ where $\bar B_δ(V+x_0)$ denotes the closed $δ$-neighborhood of a suitable translate of $V$. Note that the exponent is optimal because of scale invariance.
+  In particular, when $\mathcal D(μ)=0$, the support of $μ$ is included in an $m$-dimensional affine plane. We use this fact to give a simpler proof of Preiss&#x27;s rectifiability theorem: while still based on Gaussian averages of $μ$, this new proof avoids showing uniqueness (and hence conicality) of blow-downs of $m$-uniform measures, as well as studying Gaussian-weighted moments beyond second order.
+  The strategy of proof consists of an anisotropic blow-down of $μ$, followed by an analysis of the resulting Young measure, using a rigidity lemma involving the heat semigroup.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Given $0\le m&lt;n$ and a positive Radon measure $μ$ on $\mathbb R^n$ with at most polynomial growth, assume that it has finite $m$-dimensional \emph{Gaussian discrepancy}, defined as $$\mathcal D(μ):=\limsup_{R\to\infty}\Bigl[R^2\sup_{x\in\mathrm{spt}μ}|G_R^μ(x)-1|\Bigr],$$ where $G_R^μ(x):=(4πR^2)^{-m/2}\int_{\mathbb R^n} e^{-|z-x|^2/(4R^2)}\,dμ(z)$.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Cwikel estimates and Weyl&#x27;s laws for $L\log L$ potentials on quantum tori</div>
+<div class="meta-line">Authors: Siyu Liu, Xinyu Zhang</div>
+<div class="meta-line">First: 2026-10-14T15:43:03+00:00 · Latest: 2026-10-14T15:43:03+00:00</div>
+<div class="meta-line">Comments: 25 Pages</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.20373v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.20373v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We prove an \(L\log L\)-endpoint Cwikel estimate on quantum tori $\mathbb T_θ^d$, i.e., for every \(d\geq 1\) and \(x\in L\log L(\mathbb T_θ^d)\), \begin{equation*}
+  (1-Δ)^{-\frac{d}{4}}λ(x)(1-Δ)^{-\frac{d}{4}}\in\mathcal{L}_{1,\infty} \end{equation*} with a bound depending only on the dimension, where $λ(x)$ is the left multiplication by $x$. The main ingredient is an abstract weak Hilbert--Schmidt estimate for multiplication operators in finite von Neumann algebras whose \(L_2\)-spaces admit orthonormal bases of unitaries. When $θ=0$, our argument also gives a simpler proof of the $L\log L$ Cwikel estimate on classical tori. For $d\geq2$, we use the $C^*$-algebraic principal symbol map to prove Weyl&#x27;s laws for finite sums \[
+  \sum_{\ell=1}^N
+  S_\ell(1-Δ)^{-d/4}λ(x_\ell)
+  (1-Δ)^{-d/4}T_\ell, \] where $x_\ell\in L\log L(\mathbb T_θ^d)$ and $S_\ell,T_\ell\inΠ$, the $C^*$-algebra generated by $λ(C(\mathbb T_θ^d))$ and Fourier multipliers with continuous symbols homogeneous of degree zero. We also prove a semiclassical Weyl&#x27;s law for critical Schrödinger operators with $L\log L$ potentials.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We prove an \(L\log L\)-endpoint Cwikel estimate on quantum tori $\mathbb T_θ^d$, i.e., for every \(d\geq 1\) and \(x\in L\log L(\mathbb T_θ^d)\), \begin{equation*} (1-Δ)^{-\frac{d}{4}}λ(x)(1-Δ)^{-\frac{d}{4}}\in\mathcal{L}_{1,\infty} \end{equation*} with a bound depending only on the dimension, where $λ(x)$ is the left multiplication by $x$.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Holomorphic functions on a class of complete Hermitian manifolds</div>
+<div class="meta-line">Authors: Zeqing Miao, Hanyu Wu, Bo Yang</div>
+<div class="meta-line">First: 2026-08-03T01:58:42+00:00 · Latest: 2026-10-14T15:41:09+00:00</div>
+<div class="meta-line">Comments: In this version, we change the title and improve the exposition to highlight the main theorem (Theorem 1.1). We also add two examples (Examples 1.3 and 1.4) and update some references</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2608.01594v3">Abs</a> · <a href="https://arxiv.org/pdf/2608.01594v3">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">In this paper, we prove a gradient estimate for holomorphic functions on complete Hermitian manifolds with nonnegative second Ricci curvature. As an application, we establish several Liouville-type theorems for holomorphic functions and mappings between complete Hermitian manifolds under suitable curvature assumptions. In particular, on a complete Hermitian manifold with nonnegative second Ricci curvature and Chern torsion of linear growth, any bounded holomorphic function must be constant. Moreover, we construct examples to show that both the gradient estimate and this Liouville theorem are sharp in a suitable sense.
+  In the second part of the paper, we study holomorphic functions on simply connected complete Hermitian manifolds with vanishing Chern curvature and torsion norm of sublinear growth. Combining the gradient estimate with methods from sub-Riemannian geometry, we obtain a complete characterization of holomorphic functions of polynomial growth on such manifolds.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">In this paper, we prove a gradient estimate for holomorphic functions on complete Hermitian manifolds with nonnegative second Ricci curvature.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">On local minimality of Hausdorff dimension for round limit sets</div>
+<div class="meta-line">Authors: Sami Douba, Andrés Sambarino, Franco Vargas Pallete</div>
+<div class="meta-line">First: 2026-10-14T15:32:48+00:00 · Latest: 2026-10-14T15:32:48+00:00</div>
+<div class="meta-line">Comments: 11 pages, 2 figures. Comments are welcome!</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.20358v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.20358v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We address a question of Canary--Taylor and Canary--Minsky--Taylor for sufficiently symmetric compact hyperbolic $3$-orbifolds with totally geodesic boundary. We give sufficient conditions on the symmetries of such an orbifold to show that, among the complete convex cocompact structures on the interior, the structure with Fuchsian ends is a critical point (respectively, a strict local minimum) for the critical exponent. We also provide an infinite family of non-rigid examples fulfilling these conditions.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We address a question of Canary--Taylor and Canary--Minsky--Taylor for sufficiently symmetric compact hyperbolic $3$-orbifolds with totally geodesic boundary.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Von Neumann Type Inequalities for NC Operator Balls</div>
+<div class="meta-line">Authors: Ran Kiri</div>
+<div class="meta-line">First: 2026-10-14T15:30:34+00:00 · Latest: 2026-10-14T15:30:34+00:00</div>
+<div class="meta-line">Comments: 18 pages</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.20355v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.20355v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We establish finite-dimensional von Neumann type inequalities for commuting matrix tuples in noncommutative operator balls. Let $Ω=\mathbb{D}_Q$ be the NC operator ball of a linear pencil $Q$ with linearly independent coefficients. If $Ω(1)$ admits a transitive subgroup of automorphisms with NC lifts and $Ω(1)$ has the bounded $H^\infty$-Gleason property at the origin, then $\|f(T)\|\leq C_{Ω,n}\|f\|_{H^\infty(Ω(1))}$ for every commuting tuple $T\inΩ(n)$, with $C_{Ω,n}=(2ρ_ΩK_Ω)^{n-1}$; here $K_Ω$ is the Gleason constant and $ρ_Ω$ is the sum of the suprema of the coordinate functions on $Ω(1)$. The scalar coordinate bounds persist at every matrix level. The hypotheses hold for products of row and column balls, where $ρ_Ω=d$, yielding an unconditional estimate $(2dK_Ω)^{n-1}$. For a general type I Cartan domain $R_{p,q}$, we obtain only a conditional result: the same bound holds provided the scalar domain has the bounded $H^\infty$-Gleason property at the origin, which we do not establish when $\min(p,q)\geq 2$.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We establish finite-dimensional von Neumann type inequalities for commuting matrix tuples in noncommutative operator balls.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Weak (1,1) Shur multipliers and the one-dimensional Hörmander--Mikhlin--Schur theorem</div>
+<div class="meta-line">Authors: Yongqiang Tian</div>
+<div class="meta-line">First: 2026-10-14T15:20:05+00:00 · Latest: 2026-10-14T15:20:05+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.20339v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.20339v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Let $S_m$ be the Schur multiplier with symbol $m$. We characterize the boundedness of $S_m:\mathcal S^1\to\mathcal S^{1,\infty}$ by approximation of weighted columns in a common finite-dimensional subspace. If $W(m)$ is the weak $(1,1)$ bound and $\fD(m)$ is the column approximation constant, then $\tfrac12W(m)\le\fD(m)\le2W(m)$. These estimates hold uniformly under amplification. Our second main result is the one-dimensional Hörmander--Mikhlin--Schur weak $(1,1)$ estimate. This settles the one-dimensional case of the weak $(1,1)$ problem stated in Parcet&#x27;s ICM 2026 survey. The proof uses two adjacent dyadic grids and block decompositions indexed by finite binary trees. We apply Cuculescu&#x27;s projections to the associated block-diagonal filtration. The resulting tree estimate is independent of the depth and grows as $2^{r/2}$ with the descendant complexity $r$.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Let $S_m$ be the Schur multiplier with symbol $m$.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Odd mapping cone Chern character</div>
+<div class="meta-line">Authors: Hao Zhuang</div>
+<div class="meta-line">First: 2026-10-14T14:53:04+00:00 · Latest: 2026-10-14T14:53:04+00:00</div>
+<div class="meta-line">Comments: 8 pages. Comments welcome</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.20300v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.20300v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Our previous work established the mapping cone Chern character on the even-degree side, using the powers of the mapping cone curvature associated with the given mapping cone connection. In this paper, we carry out the odd-degree version using a trivial mapping cone connection and an automorphism on a trivial complex vector bundle. This version is based on the related odd-degree transgression.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Our previous work established the mapping cone Chern character on the even-degree side, using the powers of the mapping cone curvature associated with the given mapping cone connection.</div>
+</details>
+</div></div>
+    <details style="margin-top:16px" class="detail"><summary>History</summary>
+      <div class="history-list"><a href="archive/20261015_0558.html">20261015_0558</a>
+<a href="archive/20261014_0708.html">20261014_0708</a>
+<a href="archive/20261013_0906.html">20261013_0906</a>
+<a href="archive/20261012_0632.html">20261012_0632</a>
+<a href="archive/20261011_0603.html">20261011_0603</a>
+<a href="archive/20261010_0658.html">20261010_0658</a>
+<a href="archive/20261009_0735.html">20261009_0735</a>
+<a href="archive/20261008_0721.html">20261008_0721</a>
+<a href="archive/20261007_0649.html">20261007_0649</a>
+<a href="archive/20261006_0825.html">20261006_0825</a>
+<a href="archive/20261005_0601.html">20261005_0601</a>
+<a href="archive/20261004_0552.html">20261004_0552</a>
+<a href="archive/20261002_0657.html">20261002_0657</a>
+<a href="archive/20261001_0641.html">20261001_0641</a>
+<a href="archive/20260930_0643.html">20260930_0643</a>
+<a href="archive/20260929_0735.html">20260929_0735</a>
+<a href="archive/20260928_0541.html">20260928_0541</a>
+<a href="archive/20260927_0538.html">20260927_0538</a>
+<a href="archive/20260926_0553.html">20260926_0553</a>
+<a href="archive/20260925_0552.html">20260925_0552</a>
+<a href="archive/20260924_0550.html">20260924_0550</a>
+<a href="archive/20260923_0543.html">20260923_0543</a>
+<a href="archive/20260922_0621.html">20260922_0621</a>
+<a href="archive/20260921_0506.html">20260921_0506</a>
+<a href="archive/20260920_0508.html">20260920_0508</a>
+<a href="archive/20260919_0518.html">20260919_0518</a>
+<a href="archive/20260918_0549.html">20260918_0549</a>
+<a href="archive/20260916_0548.html">20260916_0548</a>
+<a href="archive/20260912_0522.html">20260912_0522</a>
+<a href="archive/20260911_0515.html">20260911_0515</a>
+<a href="archive/20260910_0518.html">20260910_0518</a>
+<a href="archive/20260909_0530.html">20260909_0530</a>
+<a href="archive/20260908_0549.html">20260908_0549</a>
+<a href="archive/20260907_0453.html">20260907_0453</a>
+<a href="archive/20260906_0445.html">20260906_0445</a>
+<a href="archive/20260905_0505.html">20260905_0505</a>
+<a href="archive/20260904_0527.html">20260904_0527</a>
+<a href="archive/20260903_0523.html">20260903_0523</a>
+<a href="archive/20260902_0528.html">20260902_0528</a>
+<a href="archive/20260901_0703.html">20260901_0703</a>
+<a href="archive/20260831_0541.html">20260831_0541</a>
+<a href="archive/20260830_0521.html">20260830_0521</a>
+<a href="archive/20260829_0956.html">20260829_0956</a>
+<a href="archive/20260828_1023.html">20260828_1023</a>
+<a href="archive/20260827_0521.html">20260827_0521</a>
+<a href="archive/20260826_0320.html">20260826_0320</a>
+<a href="archive/20260825_0320.html">20260825_0320</a>
+<a href="archive/20260824_0312.html">20260824_0312</a>
+<a href="archive/20260823_0313.html">20260823_0313</a>
+<a href="archive/20260822_0317.html">20260822_0317</a>
+<a href="archive/20260821_0321.html">20260821_0321</a>
+<a href="archive/20260820_0317.html">20260820_0317</a>
+<a href="archive/20260819_0327.html">20260819_0327</a>
+<a href="archive/20260818_0319.html">20260818_0319</a>
+<a href="archive/20260817_0311.html">20260817_0311</a>
+<a href="archive/20260816_0312.html">20260816_0312</a>
+<a href="archive/20260815_0340.html">20260815_0340</a>
+<a href="archive/20260814_0348.html">20260814_0348</a>
+<a href="archive/20260813_0354.html">20260813_0354</a>
+<a href="archive/20260812_0351.html">20260812_0351</a>
+<a href="archive/20260811_0345.html">20260811_0345</a>
+<a href="archive/20260810_0322.html">20260810_0322</a>
+<a href="archive/20260809_0319.html">20260809_0319</a>
+<a href="archive/20260808_0341.html">20260808_0341</a>
+<a href="archive/20260807_0834.html">20260807_0834</a>
+<a href="archive/20260806_0419.html">20260806_0419</a>
+<a href="archive/20260805_0415.html">20260805_0415</a>
+<a href="archive/20260804_0419.html">20260804_0419</a>
+<a href="archive/20260803_0402.html">20260803_0402</a>
+<a href="archive/20260802_0402.html">20260802_0402</a>
+<a href="archive/20260801_0413.html">20260801_0413</a>
+<a href="archive/20260731_0409.html">20260731_0409</a>
+<a href="archive/20260730_0405.html">20260730_0405</a>
+<a href="archive/20260729_0410.html">20260729_0410</a>
+<a href="archive/20260728_0412.html">20260728_0412</a>
+<a href="archive/20260726_0402.html">20260726_0402</a>
+<a href="archive/20260725_0407.html">20260725_0407</a>
+<a href="archive/20260724_0405.html">20260724_0405</a>
+<a href="archive/20260723_0403.html">20260723_0403</a>
+<a href="archive/20260722_0409.html">20260722_0409</a>
+<a href="archive/20260721_0414.html">20260721_0414</a>
+<a href="archive/20260720_0359.html">20260720_0359</a>
+<a href="archive/20260719_0356.html">20260719_0356</a>
+<a href="archive/20260718_0355.html">20260718_0355</a>
+<a href="archive/20260717_0352.html">20260717_0352</a>
+<a href="archive/20260716_0358.html">20260716_0358</a>
+<a href="archive/20260715_0402.html">20260715_0402</a>
+<a href="archive/20260713_0358.html">20260713_0358</a>
+<a href="archive/20260712_0356.html">20260712_0356</a>
+<a href="archive/20260711_0410.html">20260711_0410</a>
+<a href="archive/20260710_0430.html">20260710_0430</a>
+<a href="archive/20260709_0414.html">20260709_0414</a>
+<a href="archive/20260708_0443.html">20260708_0443</a>
+<a href="archive/20260707_0445.html">20260707_0445</a>
+<a href="archive/20260706_0404.html">20260706_0404</a>
+<a href="archive/20260705_0401.html">20260705_0401</a>
+<a href="archive/20260704_0408.html">20260704_0408</a>
+<a href="archive/20260703_0412.html">20260703_0412</a>
+<a href="archive/20260702_0431.html">20260702_0431</a>
+<a href="archive/20260701_0448.html">20260701_0448</a>
+<a href="archive/20260630_0445.html">20260630_0445</a>
+<a href="archive/20260629_0403.html">20260629_0403</a>
+<a href="archive/20260627_0424.html">20260627_0424</a>
+<a href="archive/20260626_0451.html">20260626_0451</a>
+<a href="archive/20260625_0424.html">20260625_0424</a>
+<a href="archive/20260624_0457.html">20260624_0457</a>
+<a href="archive/20260623_0527.html">20260623_0527</a>
+<a href="archive/20260622_0419.html">20260622_0419</a>
+<a href="archive/20260621_0409.html">20260621_0409</a>
+<a href="archive/20260620_0422.html">20260620_0422</a>
+<a href="archive/20260619_0516.html">20260619_0516</a>
+<a href="archive/20260618_0459.html">20260618_0459</a>
+<a href="archive/20260617_0537.html">20260617_0537</a>
+<a href="archive/20260616_0537.html">20260616_0537</a>
+<a href="archive/20260615_0412.html">20260615_0412</a>
+<a href="archive/20260614_0409.html">20260614_0409</a>
+<a href="archive/20260613_0457.html">20260613_0457</a>
+<a href="archive/20260612_0510.html">20260612_0510</a>
+<a href="archive/20260611_0521.html">20260611_0521</a>
+<a href="archive/20260610_0451.html">20260610_0451</a>
+<a href="archive/20260609_0509.html">20260609_0509</a>
+<a href="archive/20260608_0404.html">20260608_0404</a>
+<a href="archive/20260607_0402.html">20260607_0402</a>
+<a href="archive/20260606_0445.html">20260606_0445</a>
+<a href="archive/20260604_0540.html">20260604_0540</a>
+<a href="archive/20260603_0538.html">20260603_0538</a>
+<a href="archive/20260602_0556.html">20260602_0556</a>
+<a href="archive/20260601_0405.html">20260601_0405</a>
+<a href="archive/20260531_0400.html">20260531_0400</a>
+<a href="archive/20260530_0508.html">20260530_0508</a>
+<a href="archive/20260528_0456.html">20260528_0456</a>
+<a href="archive/20260527_0449.html">20260527_0449</a>
+<a href="archive/20260526_0417.html">20260526_0417</a>
+<a href="archive/20260524_0359.html">20260524_0359</a>
+<a href="archive/20260523_0426.html">20260523_0426</a>
+<a href="archive/20260522_0427.html">20260522_0427</a>
+<a href="archive/20260521_0456.html">20260521_0456</a>
+<a href="archive/20260520_0421.html">20260520_0421</a>
+<a href="archive/20260519_0421.html">20260519_0421</a>
+<a href="archive/20260518_0357.html">20260518_0357</a>
+<a href="archive/20260517_0353.html">20260517_0353</a>
+<a href="archive/20260516_0409.html">20260516_0409</a>
+<a href="archive/20260515_0421.html">20260515_0421</a>
+<a href="archive/20260514_0425.html">20260514_0425</a>
+<a href="archive/20260513_0425.html">20260513_0425</a>
+<a href="archive/20260512_0425.html">20260512_0425</a>
+<a href="archive/20260511_0350.html">20260511_0350</a>
+<a href="archive/20260510_0347.html">20260510_0347</a>
+<a href="archive/20260508_0407.html">20260508_0407</a>
+<a href="archive/20260507_0416.html">20260507_0416</a>
+<a href="archive/20260506_0406.html">20260506_0406</a>
+<a href="archive/20260505_0408.html">20260505_0408</a>
+<a href="archive/20260504_0344.html">20260504_0344</a>
+<a href="archive/20260503_0344.html">20260503_0344</a>
+<a href="archive/20260502_0358.html">20260502_0358</a>
+<a href="archive/20260501_0402.html">20260501_0402</a>
+<a href="archive/20260430_0405.html">20260430_0405</a>
+<a href="archive/20260429_0409.html">20260429_0409</a>
+<a href="archive/20260428_0402.html">20260428_0402</a>
+<a href="archive/20260427_0338.html">20260427_0338</a>
+<a href="archive/20260426_0336.html">20260426_0336</a>
+<a href="archive/20260425_0341.html">20260425_0341</a>
+<a href="archive/20260424_0359.html">20260424_0359</a>
+<a href="archive/20260423_0358.html">20260423_0358</a>
+<a href="archive/20260422_0357.html">20260422_0357</a>
+<a href="archive/20260421_0351.html">20260421_0351</a>
+<a href="archive/20260420_0332.html">20260420_0332</a>
+<a href="archive/20260419_0332.html">20260419_0332</a>
+<a href="archive/20260418_0349.html">20260418_0349</a>
+<a href="archive/20260417_0354.html">20260417_0354</a>
+<a href="archive/20260416_0357.html">20260416_0357</a>
+<a href="archive/20260415_0358.html">20260415_0358</a>
+<a href="archive/20260414_0358.html">20260414_0358</a>
+<a href="archive/20260413_0330.html">20260413_0330</a>
+<a href="archive/20260412_0327.html">20260412_0327</a>
+<a href="archive/20260411_0335.html">20260411_0335</a>
+<a href="archive/20260410_0357.html">20260410_0357</a>
+<a href="archive/20260409_0353.html">20260409_0353</a>
+<a href="archive/20260408_0347.html">20260408_0347</a>
+<a href="archive/20260407_0343.html">20260407_0343</a>
+<a href="archive/20260406_0325.html">20260406_0325</a>
+<a href="archive/20260405_0323.html">20260405_0323</a>
+<a href="archive/20260404_0330.html">20260404_0330</a>
+<a href="archive/20260403_0340.html">20260403_0340</a>
+<a href="archive/20260402_0508.html">20260402_0508</a>
+<a href="archive/20260401_0503.html">20260401_0503</a>
+<a href="archive/20260331_0509.html">20260331_0509</a>
+<a href="archive/20260329_0355.html">20260329_0355</a>
+<a href="archive/20260328_0405.html">20260328_0405</a>
+<a href="archive/20260327_0405.html">20260327_0405</a>
+<a href="archive/20260326_0457.html">20260326_0457</a>
+<a href="archive/20260325_0500.html">20260325_0500</a>
+<a href="archive/20260324_0457.html">20260324_0457</a>
+<a href="archive/20260323_0345.html">20260323_0345</a>
+<a href="archive/20260322_0344.html">20260322_0344</a>
+<a href="archive/20260321_0400.html">20260321_0400</a>
+<a href="archive/20260320_0500.html">20260320_0500</a>
+<a href="archive/20260319_0459.html">20260319_0459</a>
+<a href="archive/20260318_0501.html">20260318_0501</a>
+<a href="archive/20260317_0407.html">20260317_0407</a>
+<a href="archive/20260316_0351.html">20260316_0351</a>
+<a href="archive/20260315_0348.html">20260315_0348</a>
+<a href="archive/20260314_0402.html">20260314_0402</a>
+<a href="archive/20260313_0403.html">20260313_0403</a>
+<a href="archive/20260312_0405.html">20260312_0405</a>
+<a href="archive/20260311_0402.html">20260311_0402</a>
+<a href="archive/20260310_0402.html">20260310_0402</a>
+<a href="archive/20260309_0342.html">20260309_0342</a>
+<a href="archive/20260308_0340.html">20260308_0340</a>
+<a href="archive/20260307_0358.html">20260307_0358</a>
+<a href="archive/20260306_0455.html">20260306_0455</a>
+<a href="archive/20260305_0402.html">20260305_0402</a>
+<a href="archive/20260304_0401.html">20260304_0401</a>
+<a href="archive/20260303_0402.html">20260303_0402</a>
+<a href="archive/20260302_2256.html">20260302_2256</a>
+<a href="archive/20260302_2248.html">20260302_2248</a>
+<a href="archive/20260302_2247.html">20260302_2247</a>
+<a href="archive/20260302_0336.html">20260302_0336</a>
+<a href="archive/20260301_0339.html">20260301_0339</a>
+<a href="archive/20260228_0348.html">20260228_0348</a>
+<a href="archive/20260227_0354.html">20260227_0354</a>
+<a href="archive/20260226_0402.html">20260226_0402</a>
+<a href="archive/20260225_0404.html">20260225_0404</a>
+<a href="archive/20260224_0406.html">20260224_0406</a>
+<a href="archive/20260223_0338.html">20260223_0338</a>
+<a href="archive/20260222_0339.html">20260222_0339</a>
+<a href="archive/20260221_0345.html">20260221_0345</a>
+<a href="archive/20260220_0348.html">20260220_0348</a>
+<a href="archive/20260219_0358.html">20260219_0358</a>
+<a href="archive/20260218_0358.html">20260218_0358</a>
+<a href="archive/20260217_0343.html">20260217_0343</a>
+<a href="archive/20260216_0339.html">20260216_0339</a>
+<a href="archive/20260215_0338.html">20260215_0338</a>
+<a href="archive/20260213_0401.html">20260213_0401</a>
+<a href="archive/20260212_0404.html">20260212_0404</a>
+<a href="archive/20260210_0409.html">20260210_0409</a>
+<a href="archive/20260208_0339.html">20260208_0339</a>
+<a href="archive/20260207_0349.html">20260207_0349</a>
+<a href="archive/20260206_0347.html">20260206_0347</a>
+<a href="archive/20260205_0346.html">20260205_0346</a>
+<a href="archive/20260204_0354.html">20260204_0354</a>
+<a href="archive/20260202_0337.html">20260202_0337</a>
+<a href="archive/20260201_0333.html">20260201_0333</a>
+<a href="archive/20260131_0345.html">20260131_0345</a>
+<a href="archive/20260130_0341.html">20260130_0341</a>
+<a href="archive/20260129_0344.html">20260129_0344</a>
+<a href="archive/20260128_0341.html">20260128_0341</a>
+<a href="archive/20260127_0338.html">20260127_0338</a>
+<a href="archive/20260126_0330.html">20260126_0330</a>
+<a href="archive/20260125_0329.html">20260125_0329</a>
+<a href="archive/20260124_0337.html">20260124_0337</a>
+<a href="archive/20260123_0337.html">20260123_0337</a>
+<a href="archive/20260122_0343.html">20260122_0343</a>
+<a href="archive/20260121_0424.html">20260121_0424</a>
+<a href="archive/20260119_0329.html">20260119_0329</a>
+<a href="archive/20260118_0327.html">20260118_0327</a>
+<a href="archive/20260117_0332.html">20260117_0332</a>
+<a href="archive/20260116_0339.html">20260116_0339</a>
+<a href="archive/20260115_0334.html">20260115_0334</a>
+<a href="archive/20260114_0333.html">20260114_0333</a>
+<a href="archive/20260113_0334.html">20260113_0334</a>
+<a href="archive/20260112_0331.html">20260112_0331</a>
+<a href="archive/20260111_0329.html">20260111_0329</a>
+<a href="archive/20260110_0333.html">20260110_0333</a>
+<a href="archive/20260109_0334.html">20260109_0334</a>
+<a href="archive/20260108_0335.html">20260108_0335</a>
+<a href="archive/20260107_0330.html">20260107_0330</a>
+<a href="archive/20260106_0336.html">20260106_0336</a>
+<a href="archive/20260105_0328.html">20260105_0328</a>
+<a href="archive/20260104_0328.html">20260104_0328</a>
+<a href="archive/20260103_0325.html">20260103_0325</a>
+<a href="archive/20260102_0339.html">20260102_0339</a>
+<a href="archive/20260101_0329.html">20260101_0329</a>
+<a href="archive/20251231_0333.html">20251231_0333</a>
+<a href="archive/20251230_0332.html">20251230_0332</a>
+<a href="archive/20251229_0329.html">20251229_0329</a>
+<a href="archive/20251228_0332.html">20251228_0332</a>
+<a href="archive/20251227_0329.html">20251227_0329</a>
+<a href="archive/20251226_0330.html">20251226_0330</a>
+<a href="archive/20251225_0329.html">20251225_0329</a>
+<a href="archive/20251224_0331.html">20251224_0331</a>
+<a href="archive/20251223_0332.html">20251223_0332</a>
+<a href="archive/20251222_0328.html">20251222_0328</a>
+<a href="archive/20251221_0329.html">20251221_0329</a>
+<a href="archive/20251220_0330.html">20251220_0330</a>
+<a href="archive/20251219_0330.html">20251219_0330</a>
+<a href="archive/20251218_0345.html">20251218_0345</a>
+<a href="archive/20251217_0332.html">20251217_0332</a>
+<a href="archive/20251216_0333.html">20251216_0333</a>
+<a href="archive/20251215_0333.html">20251215_0333</a>
+<a href="archive/20251214_0327.html">20251214_0327</a>
+<a href="archive/20251212_0333.html">20251212_0333</a>
+<a href="archive/20251211_0331.html">20251211_0331</a>
+<a href="archive/20251210_0332.html">20251210_0332</a>
+<a href="archive/20251209_0331.html">20251209_0331</a>
+<a href="archive/20251208_0328.html">20251208_0328</a>
+<a href="archive/20251207_0327.html">20251207_0327</a>
+<a href="archive/20251206_0330.html">20251206_0330</a>
+<a href="archive/20251205_0331.html">20251205_0331</a>
+<a href="archive/20251204_0331.html">20251204_0331</a>
+<a href="archive/20251203_0333.html">20251203_0333</a>
+<a href="archive/20251202_0335.html">20251202_0335</a>
+<a href="archive/20251201_0328.html">20251201_0328</a>
+<a href="archive/20251130_0327.html">20251130_0327</a>
+<a href="archive/20251129_0328.html">20251129_0328</a>
+<a href="archive/20251128_0327.html">20251128_0327</a>
+<a href="archive/20251127_0327.html">20251127_0327</a>
+<a href="archive/20251126_0329.html">20251126_0329</a>
+<a href="archive/20251125_0327.html">20251125_0327</a>
+<a href="archive/20251124_0327.html">20251124_0327</a>
+<a href="archive/20251123_0326.html">20251123_0326</a>
+<a href="archive/20251122_0328.html">20251122_0328</a>
+<a href="archive/20251121_0328.html">20251121_0328</a>
+<a href="archive/20251120_0329.html">20251120_0329</a>
+<a href="archive/20251119_0328.html">20251119_0328</a>
+<a href="archive/20251118_0328.html">20251118_0328</a>
+<a href="archive/20251117_0326.html">20251117_0326</a>
+<a href="archive/20251116_0325.html">20251116_0325</a>
+<a href="archive/20251115_0327.html">20251115_0327</a>
+<a href="archive/20251114_0328.html">20251114_0328</a>
+<a href="archive/20251113_0330.html">20251113_0330</a>
+<a href="archive/20251112_0329.html">20251112_0329</a>
+<a href="archive/20251111_0328.html">20251111_0328</a>
+<a href="archive/20251110_0325.html">20251110_0325</a>
+<a href="archive/20251109_0326.html">20251109_0326</a>
+<a href="archive/20251108_0328.html">20251108_0328</a>
+<a href="archive/20251107_0328.html">20251107_0328</a>
+<a href="archive/20251106_0329.html">20251106_0329</a>
+<a href="archive/20251105_0326.html">20251105_0326</a>
+<a href="archive/20251104_0327.html">20251104_0327</a>
+<a href="archive/20251103_0324.html">20251103_0324</a>
+<a href="archive/20251102_0326.html">20251102_0326</a>
+<a href="archive/20251101_0324.html">20251101_0324</a>
+<a href="archive/20251031_0328.html">20251031_0328</a>
+<a href="archive/20251030_0330.html">20251030_0330</a>
+<a href="archive/20251029_0329.html">20251029_0329</a>
+<a href="archive/20251028_0329.html">20251028_0329</a>
+<a href="archive/20251027_0322.html">20251027_0322</a>
+<a href="archive/20251026_0327.html">20251026_0327</a>
+<a href="archive/20251025_0331.html">20251025_0331</a>
+<a href="archive/20251024_0329.html">20251024_0329</a>
+<a href="archive/20251023_0329.html">20251023_0329</a>
+<a href="archive/20251022_0330.html">20251022_0330</a>
+<a href="archive/20251021_0331.html">20251021_0331</a>
+<a href="archive/20251020_0328.html">20251020_0328</a>
+<a href="archive/20251019_0321.html">20251019_0321</a>
+<a href="archive/20251018_0327.html">20251018_0327</a>
+<a href="archive/20251017_0320.html">20251017_0320</a>
+<a href="archive/20251016_0328.html">20251016_0328</a>
+<a href="archive/20251015_0328.html">20251015_0328</a>
+<a href="archive/20251014_0323.html">20251014_0323</a>
+<a href="archive/20251011_0328.html">20251011_0328</a>
+<a href="archive/20251010_0330.html">20251010_0330</a>
+<a href="archive/20251009_0321.html">20251009_0321</a>
+<a href="archive/20251008_0343.html">20251008_0343</a>
+<a href="archive/20251007_0353.html">20251007_0353</a>
+<a href="archive/20251006_0325.html">20251006_0325</a>
+<a href="archive/20251005_0350.html">20251005_0350</a>
+<a href="archive/20251004_0352.html">20251004_0352</a>
+<a href="archive/20251003_0352.html">20251003_0352</a>
+<a href="archive/20251002_0356.html">20251002_0356</a>
+<a href="archive/20251001_0321.html">20251001_0321</a>
+<a href="archive/20250925_0335.html">20250925_0335</a>
+<a href="archive/20250924_0350.html">20250924_0350</a>
+<a href="archive/20250923_0348.html">20250923_0348</a>
+<a href="archive/20250922_0346.html">20250922_0346</a>
+<a href="archive/20250921_0345.html">20250921_0345</a>
+<a href="archive/20250920_0342.html">20250920_0342</a>
+<a href="archive/20250919_0346.html">20250919_0346</a>
+<a href="archive/20250918_0342.html">20250918_0342</a>
+<a href="archive/20250917_0336.html">20250917_0336</a>
+<a href="archive/20250916_0333.html">20250916_0333</a>
+<a href="archive/20250915_0333.html">20250915_0333</a>
+<a href="archive/20250914_0328.html">20250914_0328</a>
+<a href="archive/20250913_0322.html">20250913_0322</a>
+<a href="archive/20250912_0335.html">20250912_0335</a>
+<a href="archive/20250911_0337.html">20250911_0337</a>
+<a href="archive/20250910_0338.html">20250910_0338</a>
+<a href="archive/20250909_0341.html">20250909_0341</a>
+<a href="archive/20250908_0342.html">20250908_0342</a>
+<a href="archive/20250907_0333.html">20250907_0333</a>
+<a href="archive/20250906_0350.html">20250906_0350</a>
+<a href="archive/20250905_0319.html">20250905_0319</a>
+<a href="archive/20250904_0323.html">20250904_0323</a>
+<a href="archive/20250903_0355.html">20250903_0355</a>
+<a href="archive/20250902_0325.html">20250902_0325</a>
+<a href="archive/20250901_0355.html">20250901_0355</a>
+<a href="archive/20250831_0355.html">20250831_0355</a>
+<a href="archive/20250830_0356.html">20250830_0356</a>
+<a href="archive/20250829_0355.html">20250829_0355</a>
+<a href="archive/20250828_0333.html">20250828_0333</a>
+<a href="archive/20250827_1654.html">20250827_1654</a>
+<a href="archive/20250827_1602.html">20250827_1602</a>
+<a href="archive/20250827_1557.html">20250827_1557</a>
+<a href="archive/20250827_0320.html">20250827_0320</a>
+<a href="archive/20250826_0320.html">20250826_0320</a>
+<a href="archive/20250825_1752.html">20250825_1752</a>
+<a href="archive/20250825_1709.html">20250825_1709</a>
+<a href="archive/20250825_1652.html">20250825_1652</a>
+<a href="archive/20250825_1647.html">20250825_1647</a>
+<a href="archive/20250825_1645.html">20250825_1645</a>
+<a href="archive/20250825_1631.html">20250825_1631</a>
+<a href="archive/20250825_1606.html">20250825_1606</a>
+<a href="archive/20250825_1559.html">20250825_1559</a>
+<a href="archive/20250825_1558.html">20250825_1558</a>
+<a href="archive/20250825_1556.html">20250825_1556</a>
+<a href="archive/20250825_1531.html">20250825_1531</a>
+<a href="archive/20250825_1525.html">20250825_1525</a>
+<a href="archive/20250825_1516.html">20250825_1516</a>
+<a href="archive/20250825_1450.html">20250825_1450</a>
+<a href="archive/20250825_1444.html">20250825_1444</a>
+<a href="archive/20250825_1438.html">20250825_1438</a>
+<a href="archive/20250825_1414.html">20250825_1414</a>
+<a href="archive/20250825_1413.html">20250825_1413</a>
+<a href="archive/20250825_1410.html">20250825_1410</a>
+<a href="archive/20250825_1408.html">20250825_1408</a>
+<a href="archive/20250825_1405.html">20250825_1405</a>
+<a href="archive/20250825_1401.html">20250825_1401</a>
+<a href="archive/20250825_1355.html">20250825_1355</a>
+<a href="archive/20250825_1347.html">20250825_1347</a>
+<a href="archive/20250825_1345.html">20250825_1345</a>
+<a href="archive/20250825_1344.html">20250825_1344</a>
+<a href="archive/20250825_1343.html">20250825_1343</a>
+<a href="archive/20250825_1340.html">20250825_1340</a>
+<a href="archive/20250825_1339.html">20250825_1339</a>
+<a href="archive/20250825_1333.html">20250825_1333</a>
+<a href="archive/20250825_1323.html">20250825_1323</a>
+<a href="archive/20250825_1317.html">20250825_1317</a>
+<a href="archive/20250825_1243.html">20250825_1243</a>
+<a href="archive/20250824_0342.html">20250824_0342</a>
+<a href="archive/20250823_0343.html">20250823_0343</a>
+<a href="archive/20250823_0142.html">20250823_0142</a>
+<a href="archive/20250822_2331.html">20250822_2331</a>
+<a href="archive/20250822_2308.html">20250822_2308</a>
+<a href="archive/20250822_2258.html">20250822_2258</a>
+<a href="archive/20250822_2241.html">20250822_2241</a>
+<a href="archive/20250822_2228.html">20250822_2228</a>
+<a href="archive/20250822_2206.html">20250822_2206</a>
+<a href="archive/20250822_2147.html">20250822_2147</a>
+<a href="archive/20250822_2111.html">20250822_2111</a>
+<a href="archive/20250822_1259.html">20250822_1259</a>
+<a href="archive/20250822_1233.html">20250822_1233</a>
+<a href="archive/20250822_1229.html">20250822_1229</a>
+<a href="archive/20250822_1223.html">20250822_1223</a>
+<a href="archive/20250822_1210.html">20250822_1210</a>
+<a href="archive/20250822_1201.html">20250822_1201</a>
+<a href="archive/20250822_1111.html">20250822_1111</a>
+<a href="archive/20250822_1058.html">20250822_1058</a>
+<a href="archive/20250822_1052.html">20250822_1052</a>
+<a href="archive/20250822_1045.html">20250822_1045</a>
+<a href="archive/20250822_0657.html">20250822_0657</a>
+<a href="archive/20250822_0553.html">20250822_0553</a></div>
+    </details>
+    <div class="footer">Generated by arxiv-tracker</div>
+  </div>
+</body></html>
