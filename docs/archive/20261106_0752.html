@@ -1,0 +1,920 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>arXiv 论文速递</title><style>
+:root {
+  --bg:#f8fafc; --card:#ffffff; --text:#0f172a; --muted:#667085; --border:#e5e7eb; --acc:#2563eb;
+}
+:root[data-theme="dark"] {
+  --bg:#0b0f17; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --border:#1f2937; --acc:#2563eb;
+}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.6;}
+.container{max-width:900px;margin:0 auto;padding:18px;}
+.header{display:flex;gap:10px;justify-content:space-between;align-items:center;margin:8px 0 16px;flex-wrap:wrap}
+h1{font-size:22px;margin:0}
+.badge{font-size:12px;color:#111827;background:var(--acc);padding:2px 8px;border-radius:999px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px 18px;margin:14px 0;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.title{font-weight:700;margin:0 0 6px 0;font-size:18px}
+.meta-line{color:var(--muted);font-size:13px;margin:2px 0}
+.links a{color:var(--acc);text-decoration:none;margin-right:12px}
+.detail{margin-top:10px;background:rgba(2,6,23,.03);border:1px solid var(--border);border-radius:10px;padding:8px 10px}
+summary{cursor:pointer;color:var(--acc)}
+.mono{white-space:pre-wrap;background:rgba(2,6,23,.03);border:1px solid var(--border);padding:10px;border-radius:10px}
+.row{display:grid;grid-template-columns:1fr;gap:12px}
+@media (min-width: 860px) {
+  .row-2{grid-template-columns:1fr 1fr}
+}
+.footer{color:var(--muted);font-size:13px;margin:20px 0 10px}
+.hr{height:1px;background:var(--border);margin:14px 0}
+.history-list a{display:block;color:var(--acc);text-decoration:none;margin:4px 0}
+.controls{display:flex;gap:8px;align-items:center}
+.btn{border:1px solid var(--border);background:var(--card);padding:6px 10px;border-radius:10px;cursor:pointer;color:var(--text)}
+.btn:hover{border-color:var(--acc)}
+</style>
+<script>
+(function() {
+  const root = document.documentElement;
+  function apply(t) {
+    if (t==='dark') root.setAttribute('data-theme','dark');
+    else if (t==='light') root.removeAttribute('data-theme');
+    else {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        root.setAttribute('data-theme','dark');
+      else root.removeAttribute('data-theme');
+    }
+  }
+  let t = localStorage.getItem('theme') || 'light';
+  if (!['light','dark','auto'].includes(t)) t='light';
+  apply(t);
+  window.__toggleTheme = function() {
+    let cur = localStorage.getItem('theme') || 'light';
+    if (cur==='light') cur='dark';
+    else if (cur==='dark') cur='auto';
+    else cur='light';
+    localStorage.setItem('theme', cur);
+    apply(cur);
+    const el=document.getElementById('theme-label');
+    if(el) el.textContent = cur.toUpperCase();
+  }
+  window.__expandAll = function(open) {
+    document.querySelectorAll('details').forEach(d => d.open = !!open);
+  }
+})();
+</script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>arXiv 论文速递</h1>
+      <div style="display:flex;gap:10px;align-items:center">
+        
+<div class="controls">
+  <button class="btn" onclick="__toggleTheme()">Theme: <span id="theme-label" style="margin-left:6px">AUTO</span></button>
+  <button class="btn" onclick="__expandAll(true)">Expand All</button>
+  <button class="btn" onclick="__expandAll(false)">Collapse All</button>
+</div>
+
+        <span class="badge">2026-11-06 07:52</span>
+      </div>
+    </div>
+    <div class="hr"></div>
+    <div>Snapshot: 20261106_0752</div>
+    <div class="row"><div class="card">
+<div class="title">A property of boundary extensions of atomic singular inner functions</div>
+<div class="meta-line">Authors: Iason Efraimidis, Adrian Llinares, Sullivan MacDonald, Ignacio Uriarte-Tuero, Dragan Vukotic</div>
+<div class="meta-line">First: 2026-11-04T18:34:45+00:00 · Latest: 2026-11-04T18:34:45+00:00</div>
+<div class="meta-line">Comments: 12 pages</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.06877v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.06877v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Using a property of the Hilbert transform, we prove a measure theoretic result concerning the extensions of atomic singular inner functions to the circle. Various alternative proofs are presented using the mean value theorem for harmonic functions and a well-known property of Blaschke products. Using the main result, we establish several facts concerning atomic singular inner functions and their logarithms.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Using a property of the Hilbert transform, we prove a measure theoretic result concerning the extensions of atomic singular inner functions to the circle.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Matching Random Point Sets with Minimum Distortion</div>
+<div class="meta-line">Authors: Itai Benjamini, Mark Braverman, Elad Tzalik, Georgii Zakharov</div>
+<div class="meta-line">First: 2026-11-04T18:02:57+00:00 · Latest: 2026-11-04T18:02:57+00:00</div>
+<div class="meta-line">Comments: 47 pages, 9 figures. Includes a six-page technical overview explaining the main ideas and proof techniques</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.06845v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.06845v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">How well can two independent random samples from a metric measure space be matched while preserving pairwise distances? Concretely, given two independent copies, each of $n$ points sampled from the space, what is their typical metric distortion as finite $n$-point metric spaces? We prove that the space $[0,1]$ equipped with the uniform measure already exhibits a rich behavior. We show that with high probability the distortion of the two independent samples is $n^{2/3}$ up to polylogarithmic factors.
+  The lower bound reflects two competing obstructions. A bijection that maps points close to their original positions or their reflections in $[0,1]$ must expand the smallest gaps, in both directions. On the other hand, we show that large displacement from both the identity and reflection itself forces large distortion. Balancing these obstructions yields the lower-bound exponent $2/3$. For the upper bound, we construct a partial matching of the points that maps each gap between consecutive points of length $d\lesssim n^{-4/3}$ to a pair at distance $\widetilde{O}(dn^{1/3})$, with analogous control in the reverse direction. We then use a delicate multiscale oscillation construction to extend this partial matching to a low-distortion bijection.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">How well can two independent random samples from a metric measure space be matched while preserving pairwise distances?</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Bubble Tree Convergence for Minimisers of a Regularised Baby-Skyrme Model</div>
+<div class="meta-line">Authors: Sebastian Woodward</div>
+<div class="meta-line">First: 2026-10-27T15:57:39+00:00 · Latest: 2026-11-04T17:51:59+00:00</div>
+<div class="meta-line">Comments: Minor corrections</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.37457v2">Abs</a> · <a href="https://arxiv.org/pdf/2610.37457v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We study degree $1$ minimisers $u: (Σ,g) \to S^2$ for a Baby-Skyrme model with a Sacks-Uhlenbeck regularisation term $E^α(u) = \frac{1}{2} \int_Σ (1+\vert \nabla u \vert^2)^{α+1} -1 dv_g$ and establish convergence of degree $1$ minimisers to a simple bubble tree as $α\to 0$. We also obtain a new no-neck result for the classical Sacks-Uhlenbeck energy $E^α$.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We study degree $1$ minimisers $u: (Σ,g) \to S^2$ for a Baby-Skyrme model with a Sacks-Uhlenbeck regularisation term $E^α(u) = \frac{1}{2} \int_Σ (1+\vert \nabla u \vert^2)^{α+1} -1 dv_g$ and establish convergence of degree $1$ minimisers to a simple bubble tree as $α\to 0$.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Submersion constructions for geometries with parallel skew torsion</div>
+<div class="meta-line">Authors: Andrei Moroianu, Paul Schwahn</div>
+<div class="meta-line">First: 2024-09-22T12:44:03+00:00 · Latest: 2026-11-04T17:45:58+00:00</div>
+<div class="meta-line">Comments: 42 pages. v2: 40 pages, revised version</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2409.14421v2">Abs</a> · <a href="https://arxiv.org/pdf/2409.14421v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">In the absence of a de Rham decomposition theorem for geometries with torsion, we develop and unify ways to view a geometry with parallel skew torsion as the total space of a locally defined, not necessarily unique Riemannian submersion with totally geodesic fibers. We complete and extend the Cleyton-Swann classification of irreducible such geometries and characterize the cases where the stabilizer of the torsion is larger than the holonomy. As a byproduct, we obtain structure results on Gray manifolds, nearly parallel G$_2$-manifolds and Sasaki manifolds with reducible holonomy.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">In the absence of a de Rham decomposition theorem for geometries with torsion, we develop and unify ways to view a geometry with parallel skew torsion as the total space of a locally defined, not necessarily unique Riemannian submersion with totally geodesic fibers.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Independent Backward Preimages and Algebraic Radial Decompositions of Operators</div>
+<div class="meta-line">Authors: Zakariae Aznay, Fadil Chabbabi, Hassan Zariouh</div>
+<div class="meta-line">First: 2026-11-04T17:44:47+00:00 · Latest: 2026-11-04T17:44:47+00:00</div>
+<div class="meta-line">Comments: 24 pages</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.06831v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.06831v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Let $T\in\mathcal{B}(X)$, where $X$ is a complex Banach space. We introduce the spaces $\mathcal{I}_s(T)$, defined by independently chosen preimages under the powers of $T$ with exponential growth bounds, and study algebraic radial decompositions involving $\mathcal{H}_r(T)$, $\mathcal{K}_s(T)$, and $\mathcal{I}_s(T)$. We prove that every algebraic decomposition $X=\mathcal{H}_r(T)\oplus\mathcal{I}_s(T)$ is topological and that $\mathcal{I}_s(T)=\mathcal{K}_s(T)$. This removes the closedness assumption in the radial decomposition theorem of Koliha and Poon. We also prove that, for $0\leq a\leq b$, the closedness of $\mathcal{I}_b(T)$ and $\mathcal{H}_a(T)+\mathcal{I}_b(T)$ implies $\mathcal{I}_b(T)=\mathcal{K}_b(T)$. We establish finite-defect and circular spectral criteria and characterize the Cantor--Bendixson derivatives of the spectrum, Browder spectrum, and Drazin spectrum in terms of radial decompositions and quotient restrictions. As applications, we obtain new characterizations of generalized Drazin, generalized Drazin--Riesz, generalized Drazin--meromorphic, and $g_z$-invertible operators in terms of radial subspaces.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Let $T\in\mathcal{B}(X)$, where $X$ is a complex Banach space.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Spectral and mapping properties of the inverse Ornstein--Uhlenbeck operator</div>
+<div class="meta-line">Authors: Tommaso Bruno, Valentina Casarino, Paolo Ciatti, Peter Sjögren</div>
+<div class="meta-line">First: 2026-11-04T17:33:50+00:00 · Latest: 2026-11-04T17:33:50+00:00</div>
+<div class="meta-line">Comments: 17 pages</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.06826v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.06826v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We investigate the spectral and boundedness properties of the inverse Ornstein--Uhlenbeck operator $\mathcal{A}^{Q,B}$ and its associated semigroup in $L^p$ spaces with respect to the inverse Gaussian measure. We establish strong continuity and contractivity of this semigroup in $L^p$ for $p \in [1, \infty)$, and obtain a complete characterization of the spectrum of $\mathcal{A}^{Q,B}$. For $p \in (1, \infty)$, the spectrum is independent of $p$, consists entirely of eigenvalues and exhibits a spectral gap. For $p=1$, the spectrum is instead the left half-plane. Furthermore, we discuss ultracontractivity and hypercontractivity properties of the semigroup.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We investigate the spectral and boundedness properties of the inverse Ornstein--Uhlenbeck operator $\mathcal{A}^{Q,B}$ and its associated semigroup in $L^p$ spaces with respect to the inverse Gaussian measure.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Pointwise Riesz potential bounds for rough singular integrals</div>
+<div class="meta-line">Authors: Kabe Moen, Carlos Pérez</div>
+<div class="meta-line">First: 2026-10-22T20:38:02+00:00 · Latest: 2026-11-04T17:28:23+00:00</div>
+<div class="meta-line">Comments: v2. Added additional detail in Section 2 and references</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.31888v2">Abs</a> · <a href="https://arxiv.org/pdf/2610.31888v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We give a complete characterization of the kernels $Ω\in \Lup^1(\mathbb S^{d-1})$ for which the rough singular integral $\T_Ω$ and its associated maximal operator $\M_Ω$ satisfy pointwise bounds in terms of $\Int_1(|\nabla \cdot|)$ and $\M_1(|\nabla \cdot|)$, respectively, where $\Int_1$ is the Riesz potential and $\M_1$ is the fractional maximal operator. We show that these bounds hold if and only if $Ω$ belongs to the homogeneous dual Sobolev space $\dot \W^{-1,\infty}(\mathbb S^{d-1})$. This characterization yields both a PDE characterization and a geometric characterization of the pointwise bounds. In the Lebesgue scale, we show that, for $d\geq 3$, every rough operator associated to a mean-zero kernel $Ω\in\Lup^{d-1,\infty}(\mathbb S^{d-1})$ satisfies these pointwise bounds, and that the exponent $d-1$ is sharp. In dimension $d=2$, we use complex-analytic methods to establish a new pointwise bound in terms of the complex derivatives $\bar\partial f$ and $\partial f$, which are valid for every mean-zero $Ω\in\Lup^1(\mathbb S^1)$. As a consequence, we obtain new Sobolev bounds for rough singular integrals in the plane.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We give a complete characterization of the kernels $Ω\in \Lup^1(\mathbb S^{d-1})$ for which the rough singular integral $\T_Ω$ and its associated maximal operator $\M_Ω$ satisfy pointwise bounds in terms of $\Int_1(|\nabla \cdot|)$ and $\M_1(|\nabla \cdot|)$, respectively, where $\Int_1$ is the Riesz potential and $\M_1$ is the fractional maximal operator.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Uniqueness of Ricci flows from singular initial data</div>
+<div class="meta-line">Authors: Laura Flower, Man-Chun Lee, Felix Schulze</div>
+<div class="meta-line">First: 2026-11-04T17:26:38+00:00 · Latest: 2026-11-04T17:26:38+00:00</div>
+<div class="meta-line">Comments: 30 pages, comments welcome!</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.06814v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.06814v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We establish uniqueness of Ricci flows with non-negative sectional curvatures and scaling invariant curvature bounds, assuming that the induced distance functions converge to the same initial distance function up to isometry. In the compact case, restricting the size of the initial singular set, we also establish uniqueness under suitable weaker conditions.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We establish uniqueness of Ricci flows with non-negative sectional curvatures and scaling invariant curvature bounds, assuming that the induced distance functions converge to the same initial distance function up to isometry.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Holomorphicity of parabolic stable minimal surfaces of high codimension</div>
+<div class="meta-line">Authors: Da Rong Cheng, Spiro Karigiannis, Jesse Madnick</div>
+<div class="meta-line">First: 2025-09-26T10:13:50+00:00 · Latest: 2026-11-04T17:17:40+00:00</div>
+<div class="meta-line">Comments: 16 pages. Version 2: corrected minor typos and clarified exposition in response to review report. Final version to appear in the Transactions of the American Mathematical Society</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2509.22155v2">Abs</a> · <a href="https://arxiv.org/pdf/2509.22155v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">A classical theorem of Micallef says that if $F \colon (Σ, g) \to \mathbb{R}^4$ is a stable minimal immersion of an oriented $2$-dimensional complete Riemannian manifold (that is parabolic) into $\mathbb{R}^4$, it is necessarily holomorphic with respect to some parallel orthogonal complex structure on $\mathbb{R}^4$. We generalize this theorem by replacing $\mathbb{R}^4$ with $\mathbb{R}^{2 + 2k}$ for any codimension $2k$, under the additional hypothesis that the normal bundle $N Σ$ is equipped with a complex structure that is compatible with the induced metric and parallel with respect to the induced connection. This is a necessary assumption for such a theorem to hold (as it is a consequence of the conclusion), and it is automatically satisfied in the classical case $k=1$. We also briefly discuss possible further generalizations of such a result to other calibrations and to Smith maps.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">A classical theorem of Micallef says that if $F \colon (Σ, g) \to \mathbb{R}^4$ is a stable minimal immersion of an oriented $2$-dimensional complete Riemannian manifold (that is parabolic) into $\mathbb{R}^4$, it is necessarily holomorphic with respect to some parallel orthogonal complex structure on $\mathbb{R}^4$.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Geometries with parallel, skew-symmetric and closed torsion</div>
+<div class="meta-line">Authors: Andrei Moroianu, Paul Schwahn</div>
+<div class="meta-line">First: 2026-05-13T09:18:53+00:00 · Latest: 2026-11-04T17:13:46+00:00</div>
+<div class="meta-line">Comments: 27 pages. v2: add/update citations</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2605.13227v2">Abs</a> · <a href="https://arxiv.org/pdf/2605.13227v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We study Riemannian manifolds carrying a metric connection with parallel, skew-symmetric and closed torsion, which we call in short PSCT manifolds. We prove that PSCT manifolds always locally split into a product of well-understood factors, allowing a complete local classification. Further, we investigate various $G$-structures of PSCT type, with a focus on almost Hermitian structures and their possible Gray--Hervella classes.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We study Riemannian manifolds carrying a metric connection with parallel, skew-symmetric and closed torsion, which we call in short PSCT manifolds.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Parabolic Reifenberg Parametrizations and Corona Decompositions, with Applications to Singular Integrals</div>
+<div class="meta-line">Authors: John Hoffman, Matthew Hyde, Mihalis Mourgoglou</div>
+<div class="meta-line">First: 2026-10-30T17:58:48+00:00 · Latest: 2026-11-04T16:49:47+00:00</div>
+<div class="meta-line">Comments: 84 pages</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.42142v2">Abs</a> · <a href="https://arxiv.org/pdf/2610.42142v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">For parabolic Ahlfors regular sets, we show that the bilateral weak geometric lemma (BWGL), bilateral approximation by unions of planes (BAUP), and corona decompositions by $Lip$(1,1/2) graphs (whose defining functions need not have half-order time derivatives in BMO) are equivalent. These geometric conditions do not imply the strong geometric lemma. A key tool is a parabolic version of Reifenberg&#x27;s theorem for sets with holes, which we prove here. As an application of these geometric results, we prove that a parabolic Ahlfors $(n+2)$-regular measure $μ$ on $\mathbb{R}^{d+1}$, $1\leq n\leq d-1$, is parabolic uniformly rectifiable if its support satisfies any of these equivalent conditions and the parabolic Riesz transform is bounded on $L^2(μ)$.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">For parabolic Ahlfors regular sets, we show that the bilateral weak geometric lemma (BWGL), bilateral approximation by unions of planes (BAUP), and corona decompositions by $Lip$(1,1/2) graphs (whose defining functions need not have half-order time derivatives in BMO) are equivalent.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Generalised Killing Spinors and Euclidean Hypersurfaces</div>
+<div class="meta-line">Authors: Samuel Forster, Marie-Amélie Lawn</div>
+<div class="meta-line">First: 2026-11-04T16:43:46+00:00 · Latest: 2026-11-04T16:43:46+00:00</div>
+<div class="meta-line">Comments: 27 pages</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.06766v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.06766v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We study when the number of spinors satisfying the same generalised Killing equation for a symmetric endomorphism field $W$ forces local realisation as a Euclidean hypersurface. Let $N=2^{\lfloor n/2\rfloor}$ be the rank of the complex spinor bundle. We show that in dimension $n\geq4$, if the complex dimension of the solution space exceeds $N/2$, then the metric and $W$ satisfy the Gauss--Codazzi equations. This is proved in the smooth category by combining the curvature defects into a single bivector and bounding the dimension of its kernel on spinors, using algebraic curvature symmetries to handle exceptional cases. Examples obtained from non-flat four-dimensional hyperkähler manifolds show that this threshold is sharp for every $n\geq4$. In dimension three, the Heisenberg group carries the maximal number of common solutions while failing the Euclidean Gauss equation. Further, in the real analytic category, we use existing extension theorems for Einstein metrics and parallel spinors to extend all common solutions to parallel spinors on a single local Ricci-flat ambient manifold. Using Wang&#x27;s counts of parallel spinors, we obtain an independent proof of the sharp threshold for real analytic data.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We study when the number of spinors satisfying the same generalised Killing equation for a symmetric endomorphism field $W$ forces local realisation as a Euclidean hypersurface.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Uniform large-genus asymptotics of Weil-Petersson volumes</div>
+<div class="meta-line">Authors: Qihang Wang, Zhiyi Li, Bolin Qiu, Shuaijia Wang, Yuan Zhong, Kun Chen, Renqiu Xia</div>
+<div class="meta-line">First: 2026-10-26T14:21:42+00:00 · Latest: 2026-11-04T16:14:11+00:00</div>
+<div class="meta-line">Comments: 112 pages, no figures. Updated authorship, affiliations and funding; revised exposition and added a link to the accompanying Lean formalization repository. An earlier version (Zenodo v1) was published on 16 October 2026: https://zenodo.org/records/23414478</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.35492v4">Abs</a> · <a href="https://arxiv.org/pdf/2610.35492v4">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Let $V_{g,n}$ be the Weil--Petersson volume of the moduli space of hyperbolic surfaces of genus $g$ with $n$ cusps. The fixed-$n$ large-genus expansion of Mirzakhani and Zograf has correction terms polynomial in $n$ of degree $2i$ at order $g^{-i}$, and is no longer asymptotically ordered by powers of $1/g$ when $n$ is of order $\sqrt g$. We prove an asymptotic expansion in powers of $1/g$, uniform in $n\ge0$. For $n\ge1$, its coefficients are analytic in a density parameter on a neighborhood of a compact interval, including the limits $n/g\to0$ and $n/g\to\infty$. Its explicit leading term contains no undetermined constant and has relative error $O(1/g)$; truncation at a sufficiently small multiple of $\sqrt g$ gives relative error $O(\mathrm{e}^{-a\sqrt g})$ for some $a&gt;0$. For fixed $n$ this confirms Zograf&#x27;s conjecture that the constant in the Mirzakhani--Zograf asymptotics is $1/\sqrtπ$. We also determine, at every cusp density, the asymptotic profiles of the volume ratios $V_{g,n}/V_{g-1,n+2}$ and $V_{g,n+1}/(2gV_{g,n})$ and, in all degrees, the asymptotic ratios of adjacent coefficients of the one-boundary volume polynomial; this answers two questions of Mirzakhani. The proof deforms mixed $κ_1$--$ψ$ intersection numbers into pure $ψ$ intersection numbers along a family whose recursion has nonnegative coefficients, determines the overall constant through Painlevé I without assuming that the Weil--Petersson genus expansion is resurgent, and recovers individual volumes by Gaussian and Poisson coefficient extraction. As an application, the spectral gap of a Weil--Petersson random surface with $n$ cusps tends to zero in probability whenever $n/\sqrt g\to\infty$; this removes the restriction $n/g\to0$ from a theorem of Shen and Wu.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Let $V_{g,n}$ be the Weil--Petersson volume of the moduli space of hyperbolic surfaces of genus $g$ with $n$ cusps.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Towards Hodge-Riemann relations for non-Archimedean analogs of valuations on convex sets</div>
+<div class="meta-line">Authors: Semyon Alesker</div>
+<div class="meta-line">First: 2026-06-24T09:50:05+00:00 · Latest: 2026-11-04T16:14:02+00:00</div>
+<div class="meta-line">Comments: 40 pages; details added; other minor changes</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2606.25641v2">Abs</a> · <a href="https://arxiv.org/pdf/2606.25641v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">In [8], a non-Archimedean analogue of the space of translation-invariant even valuations on convex sets was introduced. In [7], motivated by a further analogy with the classical theory, this space was equipped with two multiplicative structures, the product and the convolution. Both structures satisfy Poincare duality and the (non-mixed) hard Lefschetz theorem. In this paper, we formulate a conjecture concerning a more general mixed versions of the hard Lefschetz theorem and the Hodge-Riemann relations. We prove the non-mixed Hodge-Riemann relations in degree 1 for the product and, equivalently, in codegree 1 for the convolution.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">In [8], a non-Archimedean analogue of the space of translation-invariant even valuations on convex sets was introduced.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Remarks on the structure and integrability of LA-groups</div>
+<div class="meta-line">Authors: Camilo Angulo</div>
+<div class="meta-line">First: 2026-03-16T19:41:27+00:00 · Latest: 2026-11-04T16:09:58+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2603.15858v2">Abs</a> · <a href="https://arxiv.org/pdf/2603.15858v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We study the structure of an LA-group identifying its underlying VB-group with a representation up to homotopy. We show that the Lie algebroid structure is determined by a complementary action up to homotopy of the Lie algebra of units. We identify the equations that the representation and the action need to verify in order to assemble into an LA-group, establishing an equivalence between LA-groups and LA-matched pairs. As an application, we catalog some extreme examples of representations and actions and comment on their integrability.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We study the structure of an LA-group identifying its underlying VB-group with a representation up to homotopy.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">The extension of traces for Sobolev mappings between manifolds</div>
+<div class="meta-line">Authors: Jean Van Schaftingen</div>
+<div class="meta-line">First: 2024-03-27T16:27:23+00:00 · Latest: 2026-11-04T16:04:54+00:00</div>
+<div class="meta-line">Comments: 68 pages, revised version</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2403.18738v3">Abs</a> · <a href="https://arxiv.org/pdf/2403.18738v3">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">The compact Riemannian manifolds $\mathcal{M}$ and $\mathcal{N}$ for which the trace operator from the first-order Sobolev space of mappings $\smash{\dot{W}}^{1, p} (\mathcal{M}, \mathcal{N})$ to the fractional Sobolev-Slobodeckiĭ space $\smash{\smash{\dot{W}}^{1 - 1/p, p}} (\partial \mathcal{M}, \mathcal{N})$ is surjective when $1 &lt; p &lt; \dim \mathcal{M}$ are characterised. The traces are extended using a new construction which can be carried out assuming the absence of the known topological and analytical obstructions. When $p \ge \dim \mathcal{M}$ the same construction provides a Sobolev extension with linear estimates for maps that have a continuous extension, provided that the known analytical obstructions to such a control are not present.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">The compact Riemannian manifolds $\mathcal{M}$ and $\mathcal{N}$ for which the trace operator from the first-order Sobolev space of mappings $\smash{\dot{W}}^{1, p} (\mathcal{M}, \mathcal{N})$ to the fractional Sobolev-Slobodeckiĭ space $\smash{\smash{\dot{W}}^{1 - 1/p, p}} (\partial \mathcal{M}, \mathcal{N})$ is surjective when $1 &lt; p &lt; \dim \mathcal{M}$ are characterised.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Near-Riesz and pseudo-Riesz bases of Hilbert C*-modules and semi-C*-Fredholm operators</div>
+<div class="meta-line">Authors: Michael Frank, Stefan Ivkovic</div>
+<div class="meta-line">First: 2026-06-15T11:46:00+00:00 · Latest: 2026-11-04T16:01:19+00:00</div>
+<div class="meta-line">Comments: We joined two further sections from the first version and worked on the presentation of the content, adding explanations, historical remarks and references. [The first two versions are still available on the arxiv.]</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2606.16597v3">Abs</a> · <a href="https://arxiv.org/pdf/2606.16597v3">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Several useful concepts of almost frames or Riesz bases of Hilbert spaces gave us the motivation to review the theory of C*-module frames and C*-module Riesz bases for Hilbert C*-modules, searching for similar useful structures. We give a survey of the background in C*-module frame theory, summarizing and particularly extending or correcting earlier results. The concepts of near-Riesz bases, pseudo-frames, pseudo-Riesz sequences, and pseudo Riesz bases of Hilbert C*-modules are introduced and equivalently related to (semi-)C*-Fredholm properties of their synthesis operators. The notion of the excess of a C*-module frame is introduced, taking values in related C* algebras. Indicators for possible erasures of frame elements are described with the aim to preserve robustness of frames. Introducing a new notion of pseudo-Riesz-Weyl sequences in the standard Hilbert C*-module $l_2(A)$ we reverse the found correspondence by assuming the associated synthesis operator of a Bessel sequence to be (upper semi-)C*-Weyl. Furthermore, we deduce from the invariance of (upper semi-)C*-Fredholm and C*-Riesz-Weyl properties of synthesis operators with respect to &#x27;&#x27;compact&#x27;&#x27; perturbations the perturbation invariance of the respective classes of module Bessel sequences.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Several useful concepts of almost frames or Riesz bases of Hilbert spaces gave us the motivation to review the theory of C*-module frames and C*-module Riesz bases for Hilbert C*-modules, searching for similar useful structures.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">On the geometry of real polynomials of the 7-th degree with simple complex critical points</div>
+<div class="meta-line">Authors: Elizaveta Khokhlova, Yury Kochetkov</div>
+<div class="meta-line">First: 2026-11-04T15:59:13+00:00 · Latest: 2026-11-04T15:59:13+00:00</div>
+<div class="meta-line">Comments: 7 pages, 9 figures</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.06695v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.06695v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We consider real monic polynomials with simple complex critical points. Critical values of such polynomial $p$ can be considered as vertices of the uniquely defined polygon, symmetric with respect to the $x$-axis. The inverse image of this polygon is a tree-like system of ovals that touch each other externally in critical points. This system of ovals will be called the geometrical code of $p$. Let $a_1+i\cdot b_1,\ldots,a_n+i\cdot b_n$, $a_1&lt;a_2&lt;\ldots&lt;a_n$ and $b_i&gt;0$, $i=1,\ldots,n$, be the set of critical points of our polynomial $p$ in the upper halfplane, and $c_1+i\cdot d_1,\ldots,c_n+i\cdot d_n$ be their images. The order of numbers $c_k$ and the list of signs of numbers $d_k$ will be called the algebraic code of $p$. In our experimental work we study geometrical and algebraic codes of the 7-th degree polynomials and the relations between them.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We consider real monic polynomials with simple complex critical points.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Perelman&#x27;s entropy and Gromov-Hausdorff versus dynamical stability of round spheres</div>
+<div class="meta-line">Authors: Reto Buzano, Shengwen Wang</div>
+<div class="meta-line">First: 2026-11-04T15:47:25+00:00 · Latest: 2026-11-04T15:47:25+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.06678v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.06678v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We study the Gromov-Hausdorff stability of round spheres under perturbations of Perelman&#x27;s nu-entropy. We show that in dimension two almost maximal entropy, together with an area normalisation, implies Gromov-Hausdorff closeness to the round two-sphere. In contrast, in dimensions at least three, we construct smooth metrics on the sphere whose entropies converge to that of the round sphere, but which remain a definite Gromov-Hausdorff distance away from it. These metrics can be chosen conformal and uniformly bi-Lipschitz equivalent to the round metric, with the same volume as the round sphere. Finally, in dimension three, we contrast this Gromov-Hausdorff instability with a dynamical stability result: metrics with nu-entropy above that of the round shrinking cylinder converge exponentially fast to round metrics under the volume-normalised Ricci flow.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We study the Gromov-Hausdorff stability of round spheres under perturbations of Perelman&#x27;s nu-entropy.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Single commutators in Schatten ideals</div>
+<div class="meta-line">Authors: Zhichao Liu, Shanshan Yang</div>
+<div class="meta-line">First: 2026-10-19T14:37:52+00:00 · Latest: 2026-11-04T15:43:33+00:00</div>
+<div class="meta-line">Comments: Substantial Revision</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.27024v2">Abs</a> · <a href="https://arxiv.org/pdf/2610.27024v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Let $r&gt;2$ and let $p,q\in(0,\infty)$ satisfy $r^{-1}=p^{-1}+q^{-1}$. We prove that every $T\in \mathcal{S}_r(\mathcal H)$ is a single commutator $T=[A,B]$ with $A\in \mathcal{S}_p(\mathcal H)$ and $B\in \mathcal{S}_q(\mathcal H)$. Combined with L. G. Brown&#x27;s theorem for $1 \leq r \leq 2$, this completely resolves the Pearcy--Topping problem for Schatten ideals. We also obtain simultaneous operator and Schatten norm bounds for the factors.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Let $r&gt;2$ and let $p,q\in(0,\infty)$ satisfy $r^{-1}=p^{-1}+q^{-1}$.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Noncompactness for the constant $Q_{2N}$-curvature problem</div>
+<div class="meta-line">Authors: Liuwei Gong, Seunghyeok Kim, Juncheng Wei</div>
+<div class="meta-line">First: 2026-10-06T08:53:05+00:00 · Latest: 2026-11-04T15:32:55+00:00</div>
+<div class="meta-line">Comments: 58 pages, 1 figure</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.07992v2">Abs</a> · <a href="https://arxiv.org/pdf/2610.07992v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">For every integer $N\ge4$, we construct a fixed smooth, non-locally-conformally-flat metric on the $n$-dimensional unit sphere $\mathbb S^n$ for which the constant $Q_{2N}$-curvature equation admits an $L^\infty$-unbounded sequence of positive solutions. The construction applies for $n\ge2N+20$ when $N=4,5$, $n\ge2N+19$ when $6\le N\le8$, $n\ge2N+18$ when $9\le N\le17$, and $n\ge2N+17$ when $N\ge18$. For each $L \in \mathbb{N} \cup \{0\}$, the metric can be chosen arbitrarily close to the round metric in the $C^L$ norm. It can also be chosen to have a coercive GJMS operator, a strictly positive Green function, and positive Green function mass wherever the Weyl tensor and its covariant derivatives through order $\lfloor(n-2N-4)/2\rfloor$ vanish. Together with the known cases $N=1,2,3$, this establishes noncompactness at every order and proves the sharpness of the companion compactness ranges under the same operator and mass hypotheses.
+  The construction relies on our formula for the fixed-volume Hessian of total $Q_{2N}$-curvature in transverse-traceless (TT) directions at closed Einstein metrics with $\mathrm{Ric}=(n-1)g$. For every $N \in \mathbb{N}$ and $n&gt;2N$, this Hessian is represented by a degree-$N$ polynomial in the Lichnerowicz Laplacian, extending Matsumoto&#x27;s formula for $n=2N$.
+  For the metric perturbations generated by a fixed algebraic Weyl tensor, the quadratic reduced energy with fixed bubble center is a positive multiple of this Hessian restricted to a four-dimensional TT space. Differentiation in the bubble scale yields a finite matrix whose exact sign analysis establishes the required indefiniteness in the stated dimension ranges. After continuation to real $n$, this matrix changes from negative definite to indefinite at $n_N=2N+a_*+c_*N^{-1}+O(N^{-2})$ as $N\to\infty$, with $a_*\approx16.2018$ and $c_*\approx13.5128$, explaining the eventual bound $n\ge2N+17$.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">For every integer $N\ge4$, we construct a fixed smooth, non-locally-conformally-flat metric on the $n$-dimensional unit sphere $\mathbb S^n$ for which the constant $Q_{2N}$-curvature equation admits an $L^\infty$-unbounded sequence of positive solutions.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Holomorphic functions on complete Hermitian manifolds with flat Chern connection</div>
+<div class="meta-line">Authors: Duoxin Li, Hanyu Wu, Bo Yang</div>
+<div class="meta-line">First: 2026-09-09T13:35:20+00:00 · Latest: 2026-11-04T15:25:46+00:00</div>
+<div class="meta-line">Comments: In this version, we remove &quot;II&quot; from the original title, improve the exposition, and add new examples (Example 1.8) related to Theorem 1.2</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2609.10159v2">Abs</a> · <a href="https://arxiv.org/pdf/2609.10159v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">In this paper, we prove several results concerning the function theory of complete Hermitian manifolds with vanishing Chern curvature, which we refer to as complete Chern-flat manifolds. First, we show that any complete simply connected Chern-flat manifold is elliptic in the sense of Gromov. Moreover, it is biholomorphic to a complex Lie group if the torsion has polynomial growth. We also construct examples of complete Chern-flat manifolds with torsion of exponential growth, but the underlying complex manifolds do not admit any complex Lie group structures. Next, we obtain sharp upper bounds on the dimensions of holomorphic functions of polynomial growth on complete Chern-flat manifolds, without any growth assumption on the torsion. Finally, we prove that any complete Chern-flat manifold admitting polynomial-growth holomorphic functions that form a local holomorphic coordinate system at some point is biholomorphic to complex Euclidean space. These results generalize our previous work, where we assume that the torsion has sublinear growth. Our approach combines Cauchy estimates with nilpotent analysis along the orbits of holomorphic flows generated by parallel unitary frames on such manifolds.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">In this paper, we prove several results concerning the function theory of complete Hermitian manifolds with vanishing Chern curvature, which we refer to as complete Chern-flat manifolds.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">The super Weil-Petersson asymptotic expansion and the coefficients</div>
+<div class="meta-line">Authors: Xuanyu Huang, Kefeng Liu, Hao Xu</div>
+<div class="meta-line">First: 2026-11-04T15:07:31+00:00 · Latest: 2026-11-04T15:07:31+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.06621v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.06621v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We determine the universal constant in the large-genus asymptotic expansion of super Weil-Petersson volumes. The argument adopts the uniform-transport strategy for shifted theta intersection numbers. The uniform large-genus theorem for normalized BGW numbers of Guo-Norbury-Yang-Zagier determines the amplitude at a simpler endpoint. The result is $C=π^{-9/2}$. We give a proof of the Griguolo-Papalini-Russo-Seminara conjecture for fixed boundary lengths and fixed descendant degrees. The boundary formula is uniform when the sum of the lengths is $o(\sqrt g)$, and we exhibit an obstruction at the $\sqrt g$ scale. We also compute the first four inverse-genus coefficients by two exact recursive methods and derive general polynomial structure results. Finally, we show that, for each fixed genus, the super Weil-Petersson volume divided by $n!$ is a polynomial in the number $n$ of marked points.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We determine the universal constant in the large-genus asymptotic expansion of super Weil-Petersson volumes.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Distance-Weighted Norm Equivalences for Analytic Functions on John Domains</div>
+<div class="meta-line">Authors: Katsuhiko Matsuzaki, Huaying Wei</div>
+<div class="meta-line">First: 2026-08-25T00:56:35+00:00 · Latest: 2026-11-04T14:59:40+00:00</div>
+<div class="meta-line">Comments: 15 pages, 2 figures</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2608.23940v2">Abs</a> · <a href="https://arxiv.org/pdf/2608.23940v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Let $Ω\subset\mathbb C$ be a bounded John domain and set $δ(z)=\text{dist}(z,\partialΩ)$. For $1&lt;p&lt;\infty$ and $α&gt;\text{dim}_A(\partialΩ)-2$, we establish a norm equivalence between $\int_Ω|g|^pδ^α\,dA$ and $\int_Ω|g&#x27;|^pδ^{α+p}\,dA$ for analytic functions $g$ on $Ω$, with a point-evaluation term fixing the additive constant. The estimate of the derivative term is local and holds on every proper planar domain, whereas the converse follows from a distance-weighted Poincaré inequality on John domains. Taking $α=mp-2$ yields the corresponding comparison between the $m$-th and $(m+1)$-st derivatives. For $m\ge2$ the boundary-dimension condition is automatic, so the only dimension-sensitive case is the comparison between $\int_Ω|f&#x27;|^pδ^{p-2}\,dA$ and $\int_Ω|f&#x27;&#x27;|^pδ^{2p-2}\,dA$ when $1&lt;p&lt;2$. We show that this restriction is sharp within the class of quasidisks by using self-similar Rohde snowflakes. We also construct, for every $s&gt;1$, an inward-cusp $s$-John domain on which the comparison fails, showing that the ordinary John condition cannot in general be weakened.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Let $Ω\subset\mathbb C$ be a bounded John domain and set $δ(z)=\text{dist}(z,\partialΩ)$.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Dual Banach spaces with AP but without BAP</div>
+<div class="meta-line">Authors: Longfa Sun, Zhenguo Wei, Zhendong Xu, Hao Zhang</div>
+<div class="meta-line">First: 2026-11-04T14:38:25+00:00 · Latest: 2026-11-04T14:38:25+00:00</div>
+<div class="meta-line">Comments: 26 pages</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.06579v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.06579v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We give negative answers to the AP-to-BAP and BAP-to-MAP questions for dual Banach spaces. More precisely, there is a separable Banach space $V$ with the metric approximation property (MAP) such that $V^*$ has the approximation property (AP) but no bounded approximation property (BAP). There is also a separable MAP space $X$, isomorphic to $\ell_1$, whose dual has BAP but no MAP. This resolves a longstanding open question explicitly stated in \cite{Oja2010}. The constructions rely on a finitely generated group without Property A and a quantitative estimate for optimal bounded approximation constants of projective tensor products.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We give negative answers to the AP-to-BAP and BAP-to-MAP questions for dual Banach spaces.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">An ambient metric framework for sharp compactness of the constant $Q_{2N}$-curvature problem</div>
+<div class="meta-line">Authors: Liuwei Gong, Seunghyeok Kim, Juncheng Wei</div>
+<div class="meta-line">First: 2026-11-04T14:16:32+00:00 · Latest: 2026-11-04T14:16:32+00:00</div>
+<div class="meta-line">Comments: 64 pages</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.06551v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.06551v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We develop a geometric method for studying $C^{2N}$-compactness of positive solutions to the constant $Q_{2N}$-curvature equation on closed Riemannian $n$-manifolds, for every integer $N\ge1$ and every dimension $n&gt;2N$.
+  Assuming the GJMS operator is invertible, its Green function is positive, and the positive mass condition holds, we establish sharp dimension ranges for the compactness of the set of all positive solutions with prescribed positive constant $Q_{2N}$-curvature. The largest dimension for compactness is $24$ for $N=1$ ([21]), $2N+20$ for $N=2,3$ ([11]), $2N+19$ for $N=4,5$, $2N+18$ for $N=6,7,8$, $2N+17$ for $9\le N\le17$, and $2N+16$ for all $N\ge18$. The constructions in [4,5,33,11] for $N=1,2,3$ and in the companion paper [12] for $N\ge4$ give noncompact examples in every dimension exceeding the corresponding compactness bound. We show that these $L^{\infty}$-unbounded examples can be chosen to satisfy the same operator and mass hypotheses, proving sharpness within this class.
+  Our method relates the Pohozaev quadratic forms to the Hessian $D^2\mathscr{F}(g_c)$, where $\mathscr{F}$ is the volume-normalized total $Q_{2N}$-curvature functional and $g_c$ is the standard round metric on $\mathbb{S}^n$. The ambient metric argument of [12] supplies an explicit formula for $D^2\mathscr{F}(g_c)$ on transverse-traceless tensors. The York decomposition projects metric perturbations onto this space. The scalar--vector--tensor decomposition represents the Pohozaev quadratic forms by explicit finite-dimensional matrices. We prove that these matrices are positive definite throughout the stated dimension range, a crucial step in establishing compactness.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We develop a geometric method for studying $C^{2N}$-compactness of positive solutions to the constant $Q_{2N}$-curvature equation on closed Riemannian $n$-manifolds, for every integer $N\ge1$ and every dimension $n&gt;2N$.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Rigidity of Ricci solitons for $\varphi$-related metallic semi-Riemannian structures on para-Kenmotsu manifolds</div>
+<div class="meta-line">Authors: Yasemin Karababa</div>
+<div class="meta-line">First: 2026-11-04T14:04:13+00:00 · Latest: 2026-11-04T14:04:13+00:00</div>
+<div class="meta-line">Comments: 12 pages</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.06535v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.06535v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">In this paper, we investigate Ricci solitons in the para-Kenmotsu setting with respect to a $\varphi$-related metallic semi-Riemannian metric arising from the underlying almost paracontact metric structure, under the assumption that the potential vector field is pointwise collinear with the Reeb vector field. We first establish the relation $\tS=S+2nβ\bigl(g-η\otimesη\bigr)$ between the Ricci tensors of the original metric $g$ and the $\varphi$-related metallic metric $\tg$. We then show that the Ricci soliton equation implies that the original metric $g$ is of $η$-Einstein type. By combining this condition with the contracted Bianchi identity, we obtain a rigidity result implying $f=0$, $λ=\frac{2n}{C}$, $S=-2ng$, and consequently $\tS=-\frac{2n}{C}\tg$. Thus, every Ricci soliton in this setting whose potential vector field is pointwise collinear with the Reeb vector field is necessarily trivial, and both $g$ and $\tg$ are Einstein. Finally, we provide two five-dimensional para-Kenmotsu examples: one realizing the resulting trivial Einstein Ricci soliton and another showing that failure of the required Einstein condition prevents the existence of such a soliton.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">In this paper, we investigate Ricci solitons in the para-Kenmotsu setting with respect to a $\varphi$-related metallic semi-Riemannian metric arising from the underlying almost paracontact metric structure, under the assumption that the potential vector field is pointwise collinear with the Reeb vector field.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Every Compact Metric Space Is Isometrically Embeddable into the Gromov-Hausdorff Space</div>
+<div class="meta-line">Authors: Ryo Fukano</div>
+<div class="meta-line">First: 2026-09-18T08:17:54+00:00 · Latest: 2026-11-04T13:59:25+00:00</div>
+<div class="meta-line">Comments: 15 pages</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2609.21469v2">Abs</a> · <a href="https://arxiv.org/pdf/2609.21469v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Let $(\mathcal{M},d_{\mathrm{GH}})$ denote the Gromov-Hausdorff space. We prove that every nonempty compact metric space is isometrically embeddable into $(\mathcal{M},d_{\mathrm{GH}})$, answering a question of Iliadis. The corresponding result was previously known for finite metric spaces and several larger classes. However, the general compact case remained open. More precisely, let $D&gt;0$ and let $K$ be a nonempty compact metric space with diameter at most $D$. On a fixed Cantor space, we associate a metric to each $1$-Lipschitz function from $K$ to $[0,D]$ so that the Gromov-Hausdorff distance between any two resulting spaces is exactly the uniform distance between the corresponding functions. The resulting spaces have diameter at most $76D$. As a consequence, the subspace of $\mathcal{M}$ represented by Cantor spaces is itself isometrically universal for compact metric spaces. We also construct finite approximations of these spaces, obtain an exact formula for the Gromov-Hausdorff distance between the finite models, and derive uniform approximation and covering estimates.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Let $(\mathcal{M},d_{\mathrm{GH}})$ denote the Gromov-Hausdorff space.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Real alternative Daugavet property without Daugavet property in a separable complex Banach space</div>
+<div class="meta-line">Authors: Jinghao Huang, Ran Xu</div>
+<div class="meta-line">First: 2026-11-04T13:58:48+00:00 · Latest: 2026-11-04T13:58:48+00:00</div>
+<div class="meta-line">Comments: Submitted for publication. Comments are welcome</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.06532v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.06532v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We construct a separable complex Banach space whose underlying real space has the alternative Daugavet property, although the complex space fails the Daugavet property, thereby answering an open question posed by Kadets, Martin, and Paya in 2006.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We construct a separable complex Banach space whose underlying real space has the alternative Daugavet property, although the complex space fails the Daugavet property, thereby answering an open question posed by Kadets, Martin, and Paya in 2006.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Nonisomorphic separable Banach spaces at Lipschitz distance one</div>
+<div class="meta-line">Authors: Ryotaro Tanaka</div>
+<div class="meta-line">First: 2026-11-04T13:28:39+00:00 · Latest: 2026-11-04T13:28:39+00:00</div>
+<div class="meta-line">Comments: 66 pages</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.06493v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.06493v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We construct nonisomorphic separable real Banach spaces whose multiplicative Lipschitz distance is one. Building on OpenAI&#x27;s graph-space construction, we arrange two sequences of graph spaces into countably many blocks and form two spaces that differ by a single additional block. This block distinguishes their linear structures: one space contains a complemented copy of $\ell_1(c_0(\ell_2))$, whereas the other does not. By mapping the additional block to increasingly late positions and rearranging the remaining blocks, we obtain homeomorphisms whose Lipschitz constants and those of their inverses tend to one, while both spaces and their norms remain unchanged.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We construct nonisomorphic separable real Banach spaces whose multiplicative Lipschitz distance is one.</div>
+</details>
+</div></div>
+    <details style="margin-top:16px" class="detail"><summary>History</summary>
+      <div class="history-list"><a href="archive/20261105_0759.html">20261105_0759</a>
+<a href="archive/20261104_0744.html">20261104_0744</a>
+<a href="archive/20261103_0921.html">20261103_0921</a>
+<a href="archive/20261102_0629.html">20261102_0629</a>
+<a href="archive/20261101_0558.html">20261101_0558</a>
+<a href="archive/20261031_0642.html">20261031_0642</a>
+<a href="archive/20261030_0701.html">20261030_0701</a>
+<a href="archive/20261029_0654.html">20261029_0654</a>
+<a href="archive/20261028_0641.html">20261028_0641</a>
+<a href="archive/20261027_0656.html">20261027_0656</a>
+<a href="archive/20261026_0517.html">20261026_0517</a>
+<a href="archive/20261025_0516.html">20261025_0516</a>
+<a href="archive/20261024_0544.html">20261024_0544</a>
+<a href="archive/20261023_0558.html">20261023_0558</a>
+<a href="archive/20261022_0601.html">20261022_0601</a>
+<a href="archive/20261021_0557.html">20261021_0557</a>
+<a href="archive/20261020_0640.html">20261020_0640</a>
+<a href="archive/20261018_0504.html">20261018_0504</a>
+<a href="archive/20261017_0548.html">20261017_0548</a>
+<a href="archive/20261016_0551.html">20261016_0551</a>
+<a href="archive/20261015_0558.html">20261015_0558</a>
+<a href="archive/20261014_0708.html">20261014_0708</a>
+<a href="archive/20261013_0906.html">20261013_0906</a>
+<a href="archive/20261012_0632.html">20261012_0632</a>
+<a href="archive/20261011_0603.html">20261011_0603</a>
+<a href="archive/20261010_0658.html">20261010_0658</a>
+<a href="archive/20261009_0735.html">20261009_0735</a>
+<a href="archive/20261008_0721.html">20261008_0721</a>
+<a href="archive/20261007_0649.html">20261007_0649</a>
+<a href="archive/20261006_0825.html">20261006_0825</a>
+<a href="archive/20261005_0601.html">20261005_0601</a>
+<a href="archive/20261004_0552.html">20261004_0552</a>
+<a href="archive/20261002_0657.html">20261002_0657</a>
+<a href="archive/20261001_0641.html">20261001_0641</a>
+<a href="archive/20260930_0643.html">20260930_0643</a>
+<a href="archive/20260929_0735.html">20260929_0735</a>
+<a href="archive/20260928_0541.html">20260928_0541</a>
+<a href="archive/20260927_0538.html">20260927_0538</a>
+<a href="archive/20260926_0553.html">20260926_0553</a>
+<a href="archive/20260925_0552.html">20260925_0552</a>
+<a href="archive/20260924_0550.html">20260924_0550</a>
+<a href="archive/20260923_0543.html">20260923_0543</a>
+<a href="archive/20260922_0621.html">20260922_0621</a>
+<a href="archive/20260921_0506.html">20260921_0506</a>
+<a href="archive/20260920_0508.html">20260920_0508</a>
+<a href="archive/20260919_0518.html">20260919_0518</a>
+<a href="archive/20260918_0549.html">20260918_0549</a>
+<a href="archive/20260916_0548.html">20260916_0548</a>
+<a href="archive/20260912_0522.html">20260912_0522</a>
+<a href="archive/20260911_0515.html">20260911_0515</a>
+<a href="archive/20260910_0518.html">20260910_0518</a>
+<a href="archive/20260909_0530.html">20260909_0530</a>
+<a href="archive/20260908_0549.html">20260908_0549</a>
+<a href="archive/20260907_0453.html">20260907_0453</a>
+<a href="archive/20260906_0445.html">20260906_0445</a>
+<a href="archive/20260905_0505.html">20260905_0505</a>
+<a href="archive/20260904_0527.html">20260904_0527</a>
+<a href="archive/20260903_0523.html">20260903_0523</a>
+<a href="archive/20260902_0528.html">20260902_0528</a>
+<a href="archive/20260901_0703.html">20260901_0703</a>
+<a href="archive/20260831_0541.html">20260831_0541</a>
+<a href="archive/20260830_0521.html">20260830_0521</a>
+<a href="archive/20260829_0956.html">20260829_0956</a>
+<a href="archive/20260828_1023.html">20260828_1023</a>
+<a href="archive/20260827_0521.html">20260827_0521</a>
+<a href="archive/20260826_0320.html">20260826_0320</a>
+<a href="archive/20260825_0320.html">20260825_0320</a>
+<a href="archive/20260824_0312.html">20260824_0312</a>
+<a href="archive/20260823_0313.html">20260823_0313</a>
+<a href="archive/20260822_0317.html">20260822_0317</a>
+<a href="archive/20260821_0321.html">20260821_0321</a>
+<a href="archive/20260820_0317.html">20260820_0317</a>
+<a href="archive/20260819_0327.html">20260819_0327</a>
+<a href="archive/20260818_0319.html">20260818_0319</a>
+<a href="archive/20260817_0311.html">20260817_0311</a>
+<a href="archive/20260816_0312.html">20260816_0312</a>
+<a href="archive/20260815_0340.html">20260815_0340</a>
+<a href="archive/20260814_0348.html">20260814_0348</a>
+<a href="archive/20260813_0354.html">20260813_0354</a>
+<a href="archive/20260812_0351.html">20260812_0351</a>
+<a href="archive/20260811_0345.html">20260811_0345</a>
+<a href="archive/20260810_0322.html">20260810_0322</a>
+<a href="archive/20260809_0319.html">20260809_0319</a>
+<a href="archive/20260808_0341.html">20260808_0341</a>
+<a href="archive/20260807_0834.html">20260807_0834</a>
+<a href="archive/20260806_0419.html">20260806_0419</a>
+<a href="archive/20260805_0415.html">20260805_0415</a>
+<a href="archive/20260804_0419.html">20260804_0419</a>
+<a href="archive/20260803_0402.html">20260803_0402</a>
+<a href="archive/20260802_0402.html">20260802_0402</a>
+<a href="archive/20260801_0413.html">20260801_0413</a>
+<a href="archive/20260731_0409.html">20260731_0409</a>
+<a href="archive/20260730_0405.html">20260730_0405</a>
+<a href="archive/20260729_0410.html">20260729_0410</a>
+<a href="archive/20260728_0412.html">20260728_0412</a>
+<a href="archive/20260726_0402.html">20260726_0402</a>
+<a href="archive/20260725_0407.html">20260725_0407</a>
+<a href="archive/20260724_0405.html">20260724_0405</a>
+<a href="archive/20260723_0403.html">20260723_0403</a>
+<a href="archive/20260722_0409.html">20260722_0409</a>
+<a href="archive/20260721_0414.html">20260721_0414</a>
+<a href="archive/20260720_0359.html">20260720_0359</a>
+<a href="archive/20260719_0356.html">20260719_0356</a>
+<a href="archive/20260718_0355.html">20260718_0355</a>
+<a href="archive/20260717_0352.html">20260717_0352</a>
+<a href="archive/20260716_0358.html">20260716_0358</a>
+<a href="archive/20260715_0402.html">20260715_0402</a>
+<a href="archive/20260713_0358.html">20260713_0358</a>
+<a href="archive/20260712_0356.html">20260712_0356</a>
+<a href="archive/20260711_0410.html">20260711_0410</a>
+<a href="archive/20260710_0430.html">20260710_0430</a>
+<a href="archive/20260709_0414.html">20260709_0414</a>
+<a href="archive/20260708_0443.html">20260708_0443</a>
+<a href="archive/20260707_0445.html">20260707_0445</a>
+<a href="archive/20260706_0404.html">20260706_0404</a>
+<a href="archive/20260705_0401.html">20260705_0401</a>
+<a href="archive/20260704_0408.html">20260704_0408</a>
+<a href="archive/20260703_0412.html">20260703_0412</a>
+<a href="archive/20260702_0431.html">20260702_0431</a>
+<a href="archive/20260701_0448.html">20260701_0448</a>
+<a href="archive/20260630_0445.html">20260630_0445</a>
+<a href="archive/20260629_0403.html">20260629_0403</a>
+<a href="archive/20260627_0424.html">20260627_0424</a>
+<a href="archive/20260626_0451.html">20260626_0451</a>
+<a href="archive/20260625_0424.html">20260625_0424</a>
+<a href="archive/20260624_0457.html">20260624_0457</a>
+<a href="archive/20260623_0527.html">20260623_0527</a>
+<a href="archive/20260622_0419.html">20260622_0419</a>
+<a href="archive/20260621_0409.html">20260621_0409</a>
+<a href="archive/20260620_0422.html">20260620_0422</a>
+<a href="archive/20260619_0516.html">20260619_0516</a>
+<a href="archive/20260618_0459.html">20260618_0459</a>
+<a href="archive/20260617_0537.html">20260617_0537</a>
+<a href="archive/20260616_0537.html">20260616_0537</a>
+<a href="archive/20260615_0412.html">20260615_0412</a>
+<a href="archive/20260614_0409.html">20260614_0409</a>
+<a href="archive/20260613_0457.html">20260613_0457</a>
+<a href="archive/20260612_0510.html">20260612_0510</a>
+<a href="archive/20260611_0521.html">20260611_0521</a>
+<a href="archive/20260610_0451.html">20260610_0451</a>
+<a href="archive/20260609_0509.html">20260609_0509</a>
+<a href="archive/20260608_0404.html">20260608_0404</a>
+<a href="archive/20260607_0402.html">20260607_0402</a>
+<a href="archive/20260606_0445.html">20260606_0445</a>
+<a href="archive/20260604_0540.html">20260604_0540</a>
+<a href="archive/20260603_0538.html">20260603_0538</a>
+<a href="archive/20260602_0556.html">20260602_0556</a>
+<a href="archive/20260601_0405.html">20260601_0405</a>
+<a href="archive/20260531_0400.html">20260531_0400</a>
+<a href="archive/20260530_0508.html">20260530_0508</a>
+<a href="archive/20260528_0456.html">20260528_0456</a>
+<a href="archive/20260527_0449.html">20260527_0449</a>
+<a href="archive/20260526_0417.html">20260526_0417</a>
+<a href="archive/20260524_0359.html">20260524_0359</a>
+<a href="archive/20260523_0426.html">20260523_0426</a>
+<a href="archive/20260522_0427.html">20260522_0427</a>
+<a href="archive/20260521_0456.html">20260521_0456</a>
+<a href="archive/20260520_0421.html">20260520_0421</a>
+<a href="archive/20260519_0421.html">20260519_0421</a>
+<a href="archive/20260518_0357.html">20260518_0357</a>
+<a href="archive/20260517_0353.html">20260517_0353</a>
+<a href="archive/20260516_0409.html">20260516_0409</a>
+<a href="archive/20260515_0421.html">20260515_0421</a>
+<a href="archive/20260514_0425.html">20260514_0425</a>
+<a href="archive/20260513_0425.html">20260513_0425</a>
+<a href="archive/20260512_0425.html">20260512_0425</a>
+<a href="archive/20260511_0350.html">20260511_0350</a>
+<a href="archive/20260510_0347.html">20260510_0347</a>
+<a href="archive/20260508_0407.html">20260508_0407</a>
+<a href="archive/20260507_0416.html">20260507_0416</a>
+<a href="archive/20260506_0406.html">20260506_0406</a>
+<a href="archive/20260505_0408.html">20260505_0408</a>
+<a href="archive/20260504_0344.html">20260504_0344</a>
+<a href="archive/20260503_0344.html">20260503_0344</a>
+<a href="archive/20260502_0358.html">20260502_0358</a>
+<a href="archive/20260501_0402.html">20260501_0402</a>
+<a href="archive/20260430_0405.html">20260430_0405</a>
+<a href="archive/20260429_0409.html">20260429_0409</a>
+<a href="archive/20260428_0402.html">20260428_0402</a>
+<a href="archive/20260427_0338.html">20260427_0338</a>
+<a href="archive/20260426_0336.html">20260426_0336</a>
+<a href="archive/20260425_0341.html">20260425_0341</a>
+<a href="archive/20260424_0359.html">20260424_0359</a>
+<a href="archive/20260423_0358.html">20260423_0358</a>
+<a href="archive/20260422_0357.html">20260422_0357</a>
+<a href="archive/20260421_0351.html">20260421_0351</a>
+<a href="archive/20260420_0332.html">20260420_0332</a>
+<a href="archive/20260419_0332.html">20260419_0332</a>
+<a href="archive/20260418_0349.html">20260418_0349</a>
+<a href="archive/20260417_0354.html">20260417_0354</a>
+<a href="archive/20260416_0357.html">20260416_0357</a>
+<a href="archive/20260415_0358.html">20260415_0358</a>
+<a href="archive/20260414_0358.html">20260414_0358</a>
+<a href="archive/20260413_0330.html">20260413_0330</a>
+<a href="archive/20260412_0327.html">20260412_0327</a>
+<a href="archive/20260411_0335.html">20260411_0335</a>
+<a href="archive/20260410_0357.html">20260410_0357</a>
+<a href="archive/20260409_0353.html">20260409_0353</a>
+<a href="archive/20260408_0347.html">20260408_0347</a>
+<a href="archive/20260407_0343.html">20260407_0343</a>
+<a href="archive/20260406_0325.html">20260406_0325</a>
+<a href="archive/20260405_0323.html">20260405_0323</a>
+<a href="archive/20260404_0330.html">20260404_0330</a>
+<a href="archive/20260403_0340.html">20260403_0340</a>
+<a href="archive/20260402_0508.html">20260402_0508</a>
+<a href="archive/20260401_0503.html">20260401_0503</a>
+<a href="archive/20260331_0509.html">20260331_0509</a>
+<a href="archive/20260329_0355.html">20260329_0355</a>
+<a href="archive/20260328_0405.html">20260328_0405</a>
+<a href="archive/20260327_0405.html">20260327_0405</a>
+<a href="archive/20260326_0457.html">20260326_0457</a>
+<a href="archive/20260325_0500.html">20260325_0500</a>
+<a href="archive/20260324_0457.html">20260324_0457</a>
+<a href="archive/20260323_0345.html">20260323_0345</a>
+<a href="archive/20260322_0344.html">20260322_0344</a>
+<a href="archive/20260321_0400.html">20260321_0400</a>
+<a href="archive/20260320_0500.html">20260320_0500</a>
+<a href="archive/20260319_0459.html">20260319_0459</a>
+<a href="archive/20260318_0501.html">20260318_0501</a>
+<a href="archive/20260317_0407.html">20260317_0407</a>
+<a href="archive/20260316_0351.html">20260316_0351</a>
+<a href="archive/20260315_0348.html">20260315_0348</a>
+<a href="archive/20260314_0402.html">20260314_0402</a>
+<a href="archive/20260313_0403.html">20260313_0403</a>
+<a href="archive/20260312_0405.html">20260312_0405</a>
+<a href="archive/20260311_0402.html">20260311_0402</a>
+<a href="archive/20260310_0402.html">20260310_0402</a>
+<a href="archive/20260309_0342.html">20260309_0342</a>
+<a href="archive/20260308_0340.html">20260308_0340</a>
+<a href="archive/20260307_0358.html">20260307_0358</a>
+<a href="archive/20260306_0455.html">20260306_0455</a>
+<a href="archive/20260305_0402.html">20260305_0402</a>
+<a href="archive/20260304_0401.html">20260304_0401</a>
+<a href="archive/20260303_0402.html">20260303_0402</a>
+<a href="archive/20260302_2256.html">20260302_2256</a>
+<a href="archive/20260302_2248.html">20260302_2248</a>
+<a href="archive/20260302_2247.html">20260302_2247</a>
+<a href="archive/20260302_0336.html">20260302_0336</a>
+<a href="archive/20260301_0339.html">20260301_0339</a>
+<a href="archive/20260228_0348.html">20260228_0348</a>
+<a href="archive/20260227_0354.html">20260227_0354</a>
+<a href="archive/20260226_0402.html">20260226_0402</a>
+<a href="archive/20260225_0404.html">20260225_0404</a>
+<a href="archive/20260224_0406.html">20260224_0406</a>
+<a href="archive/20260223_0338.html">20260223_0338</a>
+<a href="archive/20260222_0339.html">20260222_0339</a>
+<a href="archive/20260221_0345.html">20260221_0345</a>
+<a href="archive/20260220_0348.html">20260220_0348</a>
+<a href="archive/20260219_0358.html">20260219_0358</a>
+<a href="archive/20260218_0358.html">20260218_0358</a>
+<a href="archive/20260217_0343.html">20260217_0343</a>
+<a href="archive/20260216_0339.html">20260216_0339</a>
+<a href="archive/20260215_0338.html">20260215_0338</a>
+<a href="archive/20260213_0401.html">20260213_0401</a>
+<a href="archive/20260212_0404.html">20260212_0404</a>
+<a href="archive/20260210_0409.html">20260210_0409</a>
+<a href="archive/20260208_0339.html">20260208_0339</a>
+<a href="archive/20260207_0349.html">20260207_0349</a>
+<a href="archive/20260206_0347.html">20260206_0347</a>
+<a href="archive/20260205_0346.html">20260205_0346</a>
+<a href="archive/20260204_0354.html">20260204_0354</a>
+<a href="archive/20260202_0337.html">20260202_0337</a>
+<a href="archive/20260201_0333.html">20260201_0333</a>
+<a href="archive/20260131_0345.html">20260131_0345</a>
+<a href="archive/20260130_0341.html">20260130_0341</a>
+<a href="archive/20260129_0344.html">20260129_0344</a>
+<a href="archive/20260128_0341.html">20260128_0341</a>
+<a href="archive/20260127_0338.html">20260127_0338</a>
+<a href="archive/20260126_0330.html">20260126_0330</a>
+<a href="archive/20260125_0329.html">20260125_0329</a>
+<a href="archive/20260124_0337.html">20260124_0337</a>
+<a href="archive/20260123_0337.html">20260123_0337</a>
+<a href="archive/20260122_0343.html">20260122_0343</a>
+<a href="archive/20260121_0424.html">20260121_0424</a>
+<a href="archive/20260119_0329.html">20260119_0329</a>
+<a href="archive/20260118_0327.html">20260118_0327</a>
+<a href="archive/20260117_0332.html">20260117_0332</a>
+<a href="archive/20260116_0339.html">20260116_0339</a>
+<a href="archive/20260115_0334.html">20260115_0334</a>
+<a href="archive/20260114_0333.html">20260114_0333</a>
+<a href="archive/20260113_0334.html">20260113_0334</a>
+<a href="archive/20260112_0331.html">20260112_0331</a>
+<a href="archive/20260111_0329.html">20260111_0329</a>
+<a href="archive/20260110_0333.html">20260110_0333</a>
+<a href="archive/20260109_0334.html">20260109_0334</a>
+<a href="archive/20260108_0335.html">20260108_0335</a>
+<a href="archive/20260107_0330.html">20260107_0330</a>
+<a href="archive/20260106_0336.html">20260106_0336</a>
+<a href="archive/20260105_0328.html">20260105_0328</a>
+<a href="archive/20260104_0328.html">20260104_0328</a>
+<a href="archive/20260103_0325.html">20260103_0325</a>
+<a href="archive/20260102_0339.html">20260102_0339</a>
+<a href="archive/20260101_0329.html">20260101_0329</a>
+<a href="archive/20251231_0333.html">20251231_0333</a>
+<a href="archive/20251230_0332.html">20251230_0332</a>
+<a href="archive/20251229_0329.html">20251229_0329</a>
+<a href="archive/20251228_0332.html">20251228_0332</a>
+<a href="archive/20251227_0329.html">20251227_0329</a>
+<a href="archive/20251226_0330.html">20251226_0330</a>
+<a href="archive/20251225_0329.html">20251225_0329</a>
+<a href="archive/20251224_0331.html">20251224_0331</a>
+<a href="archive/20251223_0332.html">20251223_0332</a>
+<a href="archive/20251222_0328.html">20251222_0328</a>
+<a href="archive/20251221_0329.html">20251221_0329</a>
+<a href="archive/20251220_0330.html">20251220_0330</a>
+<a href="archive/20251219_0330.html">20251219_0330</a>
+<a href="archive/20251218_0345.html">20251218_0345</a>
+<a href="archive/20251217_0332.html">20251217_0332</a>
+<a href="archive/20251216_0333.html">20251216_0333</a>
+<a href="archive/20251215_0333.html">20251215_0333</a>
+<a href="archive/20251214_0327.html">20251214_0327</a>
+<a href="archive/20251212_0333.html">20251212_0333</a>
+<a href="archive/20251211_0331.html">20251211_0331</a>
+<a href="archive/20251210_0332.html">20251210_0332</a>
+<a href="archive/20251209_0331.html">20251209_0331</a>
+<a href="archive/20251208_0328.html">20251208_0328</a>
+<a href="archive/20251207_0327.html">20251207_0327</a>
+<a href="archive/20251206_0330.html">20251206_0330</a>
+<a href="archive/20251205_0331.html">20251205_0331</a>
+<a href="archive/20251204_0331.html">20251204_0331</a>
+<a href="archive/20251203_0333.html">20251203_0333</a>
+<a href="archive/20251202_0335.html">20251202_0335</a>
+<a href="archive/20251201_0328.html">20251201_0328</a>
+<a href="archive/20251130_0327.html">20251130_0327</a>
+<a href="archive/20251129_0328.html">20251129_0328</a>
+<a href="archive/20251128_0327.html">20251128_0327</a>
+<a href="archive/20251127_0327.html">20251127_0327</a>
+<a href="archive/20251126_0329.html">20251126_0329</a>
+<a href="archive/20251125_0327.html">20251125_0327</a>
+<a href="archive/20251124_0327.html">20251124_0327</a>
+<a href="archive/20251123_0326.html">20251123_0326</a>
+<a href="archive/20251122_0328.html">20251122_0328</a>
+<a href="archive/20251121_0328.html">20251121_0328</a>
+<a href="archive/20251120_0329.html">20251120_0329</a>
+<a href="archive/20251119_0328.html">20251119_0328</a>
+<a href="archive/20251118_0328.html">20251118_0328</a>
+<a href="archive/20251117_0326.html">20251117_0326</a>
+<a href="archive/20251116_0325.html">20251116_0325</a>
+<a href="archive/20251115_0327.html">20251115_0327</a>
+<a href="archive/20251114_0328.html">20251114_0328</a>
+<a href="archive/20251113_0330.html">20251113_0330</a>
+<a href="archive/20251112_0329.html">20251112_0329</a>
+<a href="archive/20251111_0328.html">20251111_0328</a>
+<a href="archive/20251110_0325.html">20251110_0325</a>
+<a href="archive/20251109_0326.html">20251109_0326</a>
+<a href="archive/20251108_0328.html">20251108_0328</a>
+<a href="archive/20251107_0328.html">20251107_0328</a>
+<a href="archive/20251106_0329.html">20251106_0329</a>
+<a href="archive/20251105_0326.html">20251105_0326</a>
+<a href="archive/20251104_0327.html">20251104_0327</a>
+<a href="archive/20251103_0324.html">20251103_0324</a>
+<a href="archive/20251102_0326.html">20251102_0326</a>
+<a href="archive/20251101_0324.html">20251101_0324</a>
+<a href="archive/20251031_0328.html">20251031_0328</a>
+<a href="archive/20251030_0330.html">20251030_0330</a>
+<a href="archive/20251029_0329.html">20251029_0329</a>
+<a href="archive/20251028_0329.html">20251028_0329</a>
+<a href="archive/20251027_0322.html">20251027_0322</a>
+<a href="archive/20251026_0327.html">20251026_0327</a>
+<a href="archive/20251025_0331.html">20251025_0331</a>
+<a href="archive/20251024_0329.html">20251024_0329</a>
+<a href="archive/20251023_0329.html">20251023_0329</a>
+<a href="archive/20251022_0330.html">20251022_0330</a>
+<a href="archive/20251021_0331.html">20251021_0331</a>
+<a href="archive/20251020_0328.html">20251020_0328</a>
+<a href="archive/20251019_0321.html">20251019_0321</a>
+<a href="archive/20251018_0327.html">20251018_0327</a>
+<a href="archive/20251017_0320.html">20251017_0320</a>
+<a href="archive/20251016_0328.html">20251016_0328</a>
+<a href="archive/20251015_0328.html">20251015_0328</a>
+<a href="archive/20251014_0323.html">20251014_0323</a>
+<a href="archive/20251011_0328.html">20251011_0328</a>
+<a href="archive/20251010_0330.html">20251010_0330</a>
+<a href="archive/20251009_0321.html">20251009_0321</a>
+<a href="archive/20251008_0343.html">20251008_0343</a>
+<a href="archive/20251007_0353.html">20251007_0353</a>
+<a href="archive/20251006_0325.html">20251006_0325</a>
+<a href="archive/20251005_0350.html">20251005_0350</a>
+<a href="archive/20251004_0352.html">20251004_0352</a>
+<a href="archive/20251003_0352.html">20251003_0352</a>
+<a href="archive/20251002_0356.html">20251002_0356</a>
+<a href="archive/20251001_0321.html">20251001_0321</a>
+<a href="archive/20250925_0335.html">20250925_0335</a>
+<a href="archive/20250924_0350.html">20250924_0350</a>
+<a href="archive/20250923_0348.html">20250923_0348</a>
+<a href="archive/20250922_0346.html">20250922_0346</a>
+<a href="archive/20250921_0345.html">20250921_0345</a>
+<a href="archive/20250920_0342.html">20250920_0342</a>
+<a href="archive/20250919_0346.html">20250919_0346</a>
+<a href="archive/20250918_0342.html">20250918_0342</a>
+<a href="archive/20250917_0336.html">20250917_0336</a>
+<a href="archive/20250916_0333.html">20250916_0333</a>
+<a href="archive/20250915_0333.html">20250915_0333</a>
+<a href="archive/20250914_0328.html">20250914_0328</a>
+<a href="archive/20250913_0322.html">20250913_0322</a>
+<a href="archive/20250912_0335.html">20250912_0335</a>
+<a href="archive/20250911_0337.html">20250911_0337</a>
+<a href="archive/20250910_0338.html">20250910_0338</a>
+<a href="archive/20250909_0341.html">20250909_0341</a>
+<a href="archive/20250908_0342.html">20250908_0342</a>
+<a href="archive/20250907_0333.html">20250907_0333</a>
+<a href="archive/20250906_0350.html">20250906_0350</a>
+<a href="archive/20250905_0319.html">20250905_0319</a>
+<a href="archive/20250904_0323.html">20250904_0323</a>
+<a href="archive/20250903_0355.html">20250903_0355</a>
+<a href="archive/20250902_0325.html">20250902_0325</a>
+<a href="archive/20250901_0355.html">20250901_0355</a>
+<a href="archive/20250831_0355.html">20250831_0355</a>
+<a href="archive/20250830_0356.html">20250830_0356</a>
+<a href="archive/20250829_0355.html">20250829_0355</a>
+<a href="archive/20250828_0333.html">20250828_0333</a>
+<a href="archive/20250827_1654.html">20250827_1654</a>
+<a href="archive/20250827_1602.html">20250827_1602</a>
+<a href="archive/20250827_1557.html">20250827_1557</a>
+<a href="archive/20250827_0320.html">20250827_0320</a>
+<a href="archive/20250826_0320.html">20250826_0320</a>
+<a href="archive/20250825_1752.html">20250825_1752</a>
+<a href="archive/20250825_1709.html">20250825_1709</a>
+<a href="archive/20250825_1652.html">20250825_1652</a>
+<a href="archive/20250825_1647.html">20250825_1647</a>
+<a href="archive/20250825_1645.html">20250825_1645</a>
+<a href="archive/20250825_1631.html">20250825_1631</a>
+<a href="archive/20250825_1606.html">20250825_1606</a>
+<a href="archive/20250825_1559.html">20250825_1559</a>
+<a href="archive/20250825_1558.html">20250825_1558</a>
+<a href="archive/20250825_1556.html">20250825_1556</a>
+<a href="archive/20250825_1531.html">20250825_1531</a>
+<a href="archive/20250825_1525.html">20250825_1525</a>
+<a href="archive/20250825_1516.html">20250825_1516</a>
+<a href="archive/20250825_1450.html">20250825_1450</a>
+<a href="archive/20250825_1444.html">20250825_1444</a>
+<a href="archive/20250825_1438.html">20250825_1438</a>
+<a href="archive/20250825_1414.html">20250825_1414</a>
+<a href="archive/20250825_1413.html">20250825_1413</a>
+<a href="archive/20250825_1410.html">20250825_1410</a>
+<a href="archive/20250825_1408.html">20250825_1408</a>
+<a href="archive/20250825_1405.html">20250825_1405</a>
+<a href="archive/20250825_1401.html">20250825_1401</a>
+<a href="archive/20250825_1355.html">20250825_1355</a>
+<a href="archive/20250825_1347.html">20250825_1347</a>
+<a href="archive/20250825_1345.html">20250825_1345</a>
+<a href="archive/20250825_1344.html">20250825_1344</a>
+<a href="archive/20250825_1343.html">20250825_1343</a>
+<a href="archive/20250825_1340.html">20250825_1340</a>
+<a href="archive/20250825_1339.html">20250825_1339</a>
+<a href="archive/20250825_1333.html">20250825_1333</a>
+<a href="archive/20250825_1323.html">20250825_1323</a>
+<a href="archive/20250825_1317.html">20250825_1317</a>
+<a href="archive/20250825_1243.html">20250825_1243</a>
+<a href="archive/20250824_0342.html">20250824_0342</a>
+<a href="archive/20250823_0343.html">20250823_0343</a>
+<a href="archive/20250823_0142.html">20250823_0142</a>
+<a href="archive/20250822_2331.html">20250822_2331</a>
+<a href="archive/20250822_2308.html">20250822_2308</a>
+<a href="archive/20250822_2258.html">20250822_2258</a>
+<a href="archive/20250822_2241.html">20250822_2241</a>
+<a href="archive/20250822_2228.html">20250822_2228</a>
+<a href="archive/20250822_2206.html">20250822_2206</a>
+<a href="archive/20250822_2147.html">20250822_2147</a>
+<a href="archive/20250822_2111.html">20250822_2111</a>
+<a href="archive/20250822_1259.html">20250822_1259</a>
+<a href="archive/20250822_1233.html">20250822_1233</a>
+<a href="archive/20250822_1229.html">20250822_1229</a>
+<a href="archive/20250822_1223.html">20250822_1223</a>
+<a href="archive/20250822_1210.html">20250822_1210</a>
+<a href="archive/20250822_1201.html">20250822_1201</a>
+<a href="archive/20250822_1111.html">20250822_1111</a>
+<a href="archive/20250822_1058.html">20250822_1058</a>
+<a href="archive/20250822_1052.html">20250822_1052</a>
+<a href="archive/20250822_1045.html">20250822_1045</a>
+<a href="archive/20250822_0657.html">20250822_0657</a>
+<a href="archive/20250822_0553.html">20250822_0553</a></div>
+    </details>
+    <div class="footer">Generated by arxiv-tracker</div>
+  </div>
+</body></html>
